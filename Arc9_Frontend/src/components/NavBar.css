@@ -1,0 +1,104 @@
+/* Fixed navbar */
+body {
+		/* margin-top: 10%;
+		padding-top: 50px; */
+		color: black;
+}
+/* General sizing */
+ul.dropdown-lr {
+	width: 300px;
+	color: black;
+	/* position: absolute !important;
+	margin-right: 40% !important; */
+}
+
+/* .slideInRight{
+	position: absolute;
+	margin-right: 40% !important;
+	color: orange !important;
+} */
+
+.nav-link{
+	color: white !important;
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: bold !important;
+	font-size: 20px;
+
+	
+
+}
+
+.nav-link:hover{
+	color: red !important;
+}
+
+
+
+
+.navbar-brand{
+	color: white !important;
+}
+.navbar-light {
+	/* margin-top: 20px; */
+	background-color: rgba(17, 3, 17, 0.9);
+	background-image: none;
+  	background-repeat: no-repeat;
+ }
+
+ .navbar-toggler {
+	 border: 1px solid white !important;
+	 background-color: white;
+ }
+
+ .navbar-toggler-icon{
+	 background-color: white;
+ }
+
+.formName{
+	color: black !important;
+	font-family: Arial, Helvetica, sans-serif !important
+}
+
+
+#titleName{
+	font-size: 25px;
+	font-family:"Passion One",sans-serif;
+
+}
+
+#titleColor{
+	color: #7300e6 !important;
+}
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: black;
+	}
+	.dropdown-lr label {
+		color: black;
+	}
+}
+
+/* responsive ness for iphone 6/7/8 */
+
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) 
+and (orientation : landscape) {#titleName{
+	font-size: 20px !important;
+	font-family:"Passion One",sans-serif;
+
+}
+
+.nav-link{
+	color: white !important;
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: bold !important;
+	font-size: 20px;
+
+
+}
+
+
+
+}

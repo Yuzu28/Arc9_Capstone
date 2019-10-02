@@ -1,0 +1,290 @@
+
+
+
+ 
+/* .carousel-inner img{
+   
+    height: 100vh;  
+    width: 100%;
+
+    
+
+}
+
+.carouselExampleIndicators{
+    height:100vh;
+    width:100%;
+}
+ */
+
+
+.carousel-caption {
+    top: 5%;
+    bottom: auto;
+    left: 5%;
+    text-align: left;
+    
+    right: auto;
+    padding:5px;
+}
+
+
+
+h1{
+    font-family:"Passion One",sans-serif;
+    color:#fff;
+    font-size:5rem;
+	margin-top:6rem;
+	margin-bottom:4rem
+}
+
+.title{
+    color: #7300e6;
+}
+
+/* image 1 in carosel */
+.aa{
+    background-image: url('./images/main.jpg') !important;
+    background-position:90% 10% !important;
+    background-size:cover !important;
+
+}
+
+/* image 2 in carosel */
+
+.bb{
+    background-image: url('./images/godEaterw.jpg') !important;
+    background-position:50% 50% !important;
+	background-size:cover !important;
+}
+
+/* image 3 in carosel */
+
+.cc{
+    background-image: url('./images/sky.jpg') !important;
+    background-position:90% 10% !important;
+	background-size:cover !important;
+}
+
+/* image 4 in carosel */
+
+.dd{
+    background-image: url('./images/game.jpeg') !important;
+    background-position:90% 10% !important;
+	background-size:cover !important;
+}
+
+/* image 5 in carosel */
+
+.ee{
+    background-image: url('./images/night.jpg') !important;
+    background-position:50% 50% !important;
+	background-size:cover !important;
+}
+
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  h4{
+    font-size:3rem;
+    color: #7300e6;
+
+
+
+  }
+  .bird{
+    margin-top: 4%;
+    background-color: black !important;
+    opacity: 0.75 !important;
+    padding: 23px;
+    border-color: 1px solid white !important;
+
+
+}
+
+.bird p{
+   font-size: 20px;
+   margin-top: 3%;
+
+}
+@media(max-width: 768px){
+h4{
+  font-size: 2rem;
+}
+}
+
+
+/* **********************
+Media Queries
+********************** */
+
+
+/* iphone 6/7/8  Portrait*/
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) 
+and (orientation : portrait) { .aa {
+    background-position:50% 50% !important;
+
+} 
+.bb,.cc {
+    background-position:50% 50% !important;
+
+} 
+.ee {
+    background-position:60% 40% !important;
+}
+
+.dd {
+        background-position:40% 60% !important;
+    
+    } 
+
+
+
+    h1, #main {
+        top: auto;
+        bottom: 10%;
+        left: 15%;
+        text-align: left;
+        font-size:3rem;
+    
+        right: auto;
+        padding:5px;
+    
+    } 
+    
+    #sub {
+        top: auto;
+        bottom: 10%;
+        left: 8%;
+        text-align: left;
+        font-size:3rem;
+    
+        right: auto;
+        padding:5px;
+    
+    } h4{font-size: 2rem !important;}
+
+}    
+
+
+
+
+/* iphone 6/7/8 Landscape*/
+
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) 
+and (orientation : landscape) { h1,  #main {
+    /* top: 1% !important; */
+    /* bottom: 10%; */
+    left: 8%;
+    text-align: left;
+    font-size:3rem;
+
+    right: auto;
+    padding:5px;
+
+} 
+
+#sub {
+    /* top: 1% !important; */
+    /* bottom: 10%; */
+    left: 8%;
+    text-align: left;
+    font-size:1rem;
+
+    right: auto;
+    padding:14px;
+
+}  h4{font-size: 2rem !important} 
+
+}
+
+
+
+
+
+/* ipad  Landscape*/
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape) { .aa {
+    background-position:50% 50% !important;
+
+
+} .bb {
+    background-position:50% 50% !important;
+} 
+
+.cc {
+    background-position:50% 50% !important;
+}
+
+.dd {
+    background-position:50% 50% !important;
+}
+
+.ee {
+    background-position:50% 50% !important;
+}
+
+}
+
+/* ipad  Portrait*/
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : portrait) {.aa {
+    background-position:60% 40% !important;
+} 
+
+ h1,  #main {
+    top: auto;
+    bottom: 10%;
+    left: 20%;
+    text-align: left;
+    font-size:6rem;
+
+    right: auto;
+    padding:5px;
+
+}
+
+.bb,.cc,.dd,.ee {
+    background-position:50% 50% !important;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
