@@ -36,7 +36,7 @@ class Games extends Component{
             'Accept': 'application/json',
             'user-key': API_KEY
         },
-        data: `fields age_ratings.rating,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where platforms = (3,9,11,12,48) & platforms != (6) & cover !=n & genres !=n & release_dates !=n & first_release_date > ${timestamp}; sort first_release_date asc; limit 20;`
+        data: `fields age_ratings.rating,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where platforms = (3,9,11,12,48) & platforms != (6) & cover !=n & genres !=n & release_dates !=n & first_release_date > ${timestamp}; sort first_release_date asc; limit 50;`
     })
         .then(response => {
             const gameData = response.data;
@@ -62,8 +62,21 @@ class Games extends Component{
             dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            // dots: true,
+            // infinite: true,
+            // speed: 1000,
+            // slidesToShow: 3,
+            // slidesToScroll: 3,
+            // autoplay: true,
+            // lazyLoad: true,
+            // centerMode: true,
+            // adaptiveHeight: true,
+            // fade: true,
+            // arrows: true,
+            // autoplaySpeed: 5000,
+            // className: 'slides'
           };
         // console.log(this.state.GameComingSoon)
         // images.igdb.com/igdb/image/upload/t_thumb/oejlmvjvjz7gellep3xw.jpg
@@ -72,13 +85,16 @@ class Games extends Component{
         const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         const gameList = this.state.GameComingSoon.map((game,index)=>{
             return(
-                <div  key={index}>
-                        <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="80%" width="80%"/>
+                <div className="col s3"  key={index}>
+                        <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"/>
+                        <span className="gametitle">{game.name}</span> <br></br>
+                        <span className="dataRelease">Date Release: {game.release_dates[0].human}</span>
+
                         {/* <ul>
                             <li className="gametitle">
                             {game.name}
                             </li>
-                            <li>Date Release: {game.release_dates[0].human}</li>
+                            <li className="gametitle">Date Release: {game.release_dates[0].human}</li>
                         </ul> */}
                         
                     </div>
@@ -90,7 +106,7 @@ class Games extends Component{
     return(
         // <div> {gameList}</div>
         <div>
-        <h2> Multiple items </h2>
+        <h2> Recently Released </h2>
         <Slider {...settings}>
              {gameList}
             
@@ -102,6 +118,8 @@ class Games extends Component{
 }
 
 export default Games;
+
+// height="60%" width="60%"
 
 
 

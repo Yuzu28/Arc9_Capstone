@@ -61,8 +61,8 @@ h1{
 /* image 3 in carosel */
 
 .cc{
-    background-image: url('./images/sky.jpg') !important;
-    background-position:90% 10% !important;
+    background-image: url('./images/finly.jpg') !important;
+    background-position:50% 50% !important;
 	background-size:cover !important;
 }
 
@@ -77,8 +77,8 @@ h1{
 /* image 5 in carosel */
 
 .ee{
-    background-image: url('./images/night.jpg') !important;
-    background-position:50% 50% !important;
+    background-image: url('./images/final.jpg') !important;
+    background-position:90% 10% !important;
 	background-size:cover !important;
 }
 
@@ -100,10 +100,12 @@ h1{
 
 
   }
+
+  /* basically the info box for each slider */
   .bird{
     margin-top: 4%;
     background-color: black !important;
-    opacity: 0.75 !important;
+    opacity: 0.80 !important;
     padding: 23px;
     border-color: 1px solid white !important;
 

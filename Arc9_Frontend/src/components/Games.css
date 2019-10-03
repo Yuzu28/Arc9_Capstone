@@ -1,6 +1,9 @@
-#ggg{
+
+
+
+/* #ggg{
     margin-bottom: 10px;
-}
+} */
 
 
 /* .gameHolder{
@@ -15,20 +18,56 @@ ul{
     text-align: center;
 }
 
-li{
+/* li{
     font-family:"Passion One",sans-serif;
     font-size: 20px;
+    margin-right: 7%;
 
-}
+} */
 
 .gametitle{
     color: #7300e6 !important ;
+    font-family:"Passion One",sans-serif;
+    font-size: 125%	;
+
 }
 
+.dataRelease{
+    color:white !important ;
+    font-family:"Passion One",sans-serif;
+    font-size: 120%	;
 
+}
 
+/* fix responsiveness for gametile and date release for iphone 6,7,8 */
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) 
+and (orientation : portrait) {
+    .gametitle{ font-size: 35% !important	;
+ }
+ .dataRelease{
+    font-size: 30% !important;
+}
+}
+
+.slick-slider{
+    margin-right: 5% !important ;
+    margin-left: 5% !important ;
+}
+
+.slick-prev {
+    left: 1% !important;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 3% !important;
+    z-index: 1;
+  }
 
   
+
+ 
   
   
   
