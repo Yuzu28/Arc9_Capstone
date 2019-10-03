@@ -51,6 +51,22 @@ and (orientation : portrait) {
 }
 }
 
+
+h2{
+    font-family:"Passion One",sans-serif;
+    color: #7300e6 !important ;
+    /* text-align: left !important ; */
+    /* margin-left: 6% !important ; */
+    margin-bottom: 2% !important ;
+
+
+
+
+
+}
+
+/* carosel style  */
+
 .slick-slider{
     margin-right: 5% !important ;
     margin-left: 5% !important ;
@@ -61,13 +77,20 @@ and (orientation : portrait) {
     z-index: 1;
   }
   .slick-next {
-    right: 3% !important;
+    right: 2% !important;
     z-index: 1;
   }
 
   
+  .slick-prev:before,
+  .slick-next:before {
+    color: yellow !important;
+    font-size: 10%;
+  }
 
- 
+  /* .slick-prev:before, .slick-next:before {
+      font-size: 30px !important;
   
+  } */
   
   

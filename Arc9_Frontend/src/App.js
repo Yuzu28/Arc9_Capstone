@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Slider from './components/Slider'
 import Games from './components/Games'
+import GamesSinglePage from './components/GamesSinglePage';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Route exact path="/" component={Slider}/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/" component={Games}/>
+        <Route exact path="/games/:gamesId" component={GamesSinglePage} />
+        {/* <Route exact path="/" component={GamesSinglePage} /> */}
+
 
 
 

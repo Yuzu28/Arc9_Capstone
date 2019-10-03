@@ -5,6 +5,7 @@ import './Games.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {Link} from 'react-router-dom';
 
 
 // console.log(config);
@@ -64,6 +65,7 @@ class Games extends Component{
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 5,
+           
             // dots: true,
             // infinite: true,
             // speed: 1000,
@@ -86,7 +88,9 @@ class Games extends Component{
         const gameList = this.state.GameComingSoon.map((game,index)=>{
             return(
                 <div className="col s3"  key={index}>
+                    <Link to={`/games/${game.id}`}>
                         <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"/>
+                    </Link>
                         <span className="gametitle">{game.name}</span> <br></br>
                         <span className="dataRelease">Date Release: {game.release_dates[0].human}</span>
 
@@ -106,7 +110,7 @@ class Games extends Component{
     return(
         // <div> {gameList}</div>
         <div>
-        <h2> Recently Released </h2>
+        <h2> Coming Soon </h2>
         <Slider {...settings}>
              {gameList}
             
@@ -116,6 +120,9 @@ class Games extends Component{
     )
     }
 }
+
+
+
 
 export default Games;
 
