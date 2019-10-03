@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "db:create": "createdb arc9-app",
+    "db:init": "psql -f schema.sql arc9-app && psql -f seed.sql arc9-app",
+    "db:destroy": "dropdb arc9-app",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -10,6 +14,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pg-promise": "^9.2.1"
   }
 }
