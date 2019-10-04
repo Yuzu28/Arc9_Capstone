@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './NavBar.css';
 import {Link} from 'react-router-dom';
+import axios from 'axios'
 
 
  class NavBar extends Component{
@@ -9,7 +10,12 @@ import {Link} from 'react-router-dom';
 
     constructor(){
         super();
-        this.state = {searchTerm: ""}
+        this.state = {searchTerm: "",
+        username: "",
+        password: "",
+        email: "",
+       
+    }
     }
     changeSearch = (e)=>{
         this.setState({searchTerm: e.target.value})
@@ -25,30 +31,38 @@ import {Link} from 'react-router-dom';
     //getting the searchBar to work end ************************
 
     // state = {
-    //     username: "",
-    //     password: "",
-    //     email: "",
+        // username: "",
+        // password: "",
+        // email: "",
        
 
 
     // }
 
-    // handleUsername= (e) =>{
-    //     this.setState({Username: e.target.value})
+    handleUsername= (e) =>{
+        this.setState({username: e.target.value})
 
-    // }
+    }
 
-    // handlePassword= (e) =>{
-    //     this.setState({Password: e.target.value})
+    handlePassword= (e) =>{
+        this.setState({password: e.target.value})
 
-    // }
+    }
 
-    // handleEmail= (e) =>{
-    //     this.setState({Email: e.target.value})
+    handleEmail= (e) =>{
+        this.setState({email: e.target.value})
 
         
-    // }
-
+    }
+    submitSignup = async(e)=>{
+        e.preventDefault()
+        
+        const data = this.state
+        console.log(window.apiHost)
+        const url = `${window.apiHost}/users/signup`
+        const axiosResponse = await axios.post(url, data)
+        console.log(axiosResponse)
+    }
    
 
    
@@ -90,15 +104,15 @@ import {Link} from 'react-router-dom';
                                 <form id="ajax-register-form" action="" method="post" role="form" autoComplete="off">
                                     <div className="form-group">
                                         <input type="text" name="username" id="username" tabIndex="1" className="form-control"
-                                        placeholder="Username" value="" />
+                                        placeholder="Username" onChange={this.handleUsername} value={this.state.username}  />
                                     </div>
                                     <div className="form-group">
                                         <input type="email" name="email" id="email" tabIndex="1" className="form-control"
-                                        placeholder="Email Address" value="" />
+                                        placeholder="Email Address" onChange={this.handleEmail} value={this.state.email}  />
                                     </div>
                                     <div className="form-group">
                                         <input type="password" name="password" id="password" tabIndex="2" className="form-control"
-                                        placeholder="Password" />
+                                        placeholder="Password" onChange={this.handlePassword} value={this.state.password} />
                                     </div>
                                     <div className="form-group">
                                         <input type="password" name="confirm-password" id="confirm-password" tabIndex="2"
@@ -108,7 +122,7 @@ import {Link} from 'react-router-dom';
                                         <div className="row">
                                             <div className="col-12 ">
                                                 <input type="submit" name="register-submit" id="register-submit" tabIndex="4"
-                                            className="form-control btn btn-primary" value="Register Now" />
+                                            className="form-control btn btn-primary" value="Register Now" onClick={this.submitSignup}/>
                                             </div>
                                         </div>
                                     </div>
