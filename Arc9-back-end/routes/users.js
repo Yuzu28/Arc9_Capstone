@@ -12,8 +12,10 @@ router.post('/signup', (req, res, next)=>{
   const username = req.body.username
   const email = req.body.email
   const password = req.body.password
-
-
+//   console.log(req.body)
+// res.json({
+//   msg: 'Youve reached the backend'
+// })
 
   db.one(
     `insert into users
