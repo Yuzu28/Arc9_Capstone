@@ -5,6 +5,25 @@ import {Link} from 'react-router-dom';
 
  class NavBar extends Component{
 
+    //getting the searchBar to work......
+
+    constructor(){
+        super();
+        this.state = {searchTerm: ""}
+    }
+    changeSearch = (e)=>{
+        this.setState({searchTerm: e.target.value})
+    }
+    search = (e)=>{
+        e.preventDefault();
+        const searchUrl = `/search/${this.state.searchTerm}`
+        // to programmatically move the browser to a new page
+        this.props.history.push(searchUrl);
+    }
+
+
+    //getting the searchBar to work end ************************
+
     // state = {
     //     username: "",
     //     password: "",
@@ -33,8 +52,9 @@ import {Link} from 'react-router-dom';
    
 
    
-    // dark bg-dark 
     render(){
+        // console.log(this.state.searchTerm)
+
         return(
 
 <nav className="navbar navbar-light fixed-top navbar-expand-md" role="navigation">
@@ -42,34 +62,24 @@ import {Link} from 'react-router-dom';
         <Link to="/" className="navbar-brand" id="titleName" >  <span id="titleColor">Arc-9 </span> <u>Gaming</u></Link>
         <div id="navbar" className="collapse navbar-collapse">
 
-        {/* <form class="navbar-form" role="search">
-        <div class="input-group">
-     <input type="text" class="form-control" placeholder="Search for Games" />
-     <div class="input-group-append">
-       <button class="btn btn-secondary" type="button">
-         <i class="fa fa-search"></i>
-       </button>
-     </div>
- </div>
- </form> */}
-
-  {/* <div class="col-sm-3 col-md-3">
-        <form class="navbar-form" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="q" />
-            <div class="input-group-btn">
-                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
+            {/* *********************************search bar stuff */}
+        <form onSubmit={this.search} className="navbar-form" role="search">
+                <div className="input-group">
+                    <input onChange={this.changeSearch} value={this.state.searchTerm} type="text" className="form-control" placeholder="Search" />
+                        <div className="input-group-append">
+                            <button onClick={this.search} className="btn btn-secondary" type="button">
+                                <i className="fa fa-search"></i>
+                            </button>
+                        </div>
+                </div>
         </form>
-    </div> */}
+  
         
-            <ul className="nav navbar-nav">
-                {/* <li className="active nav-item"><Link to="/" className="nav-link">Trending</Link>
-                </li> */}
+            {/* <ul className="nav navbar-nav">
+                
                 <li className="nav-item"><Link to="/" className="nav-link">Favorites</Link>
                 </li>
-            </ul>
+            </ul> */}
                 <ul className="nav navbar-nav ml-auto navi">
                     <li className="dropdown nav-item"> <Link to="/" className="dropdown-toggle nav-link" data-toggle="dropdown" >Register <span className="caret"></span></Link>
                         <ul className="dropdown-menu dropdown-menu-right dropdown-lr animated flipInX" role="menu">

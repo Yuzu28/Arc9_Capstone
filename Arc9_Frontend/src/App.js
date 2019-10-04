@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Slider from './components/Slider'
 import Games from './components/Games'
 import GamesSinglePage from './components/GamesSinglePage';
+import SearchPage from './components/SearchPage'
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route exact path="/" component={Games}/>
         <Route exact path="/games/:gamesId" component={GamesSinglePage} />
-        {/* <Route exact path="/" component={GamesSinglePage} /> */}
+
+				<Route path="/search/:searchTerm" component={SearchPage} />
+
+        {/* <Route path="/results/" component={SearchPage} /> */}
+
 
 
 

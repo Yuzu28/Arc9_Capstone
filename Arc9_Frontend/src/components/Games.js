@@ -87,7 +87,7 @@ class Games extends Component{
         const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         const gameList = this.state.GameComingSoon.map((game,index)=>{
             return(
-                <div className="col s3"  key={index}>
+                <div className="row s3"  key={index}>
                     <Link to={`/games/${game.id}`}>
                         <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"/>
                     </Link>
