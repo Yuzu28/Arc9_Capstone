@@ -12,7 +12,8 @@ class SearchPage extends Component {
         this.state = {
             SeachResults: [],
             responseData: false,
-            msg : ""
+            msg : "",
+            img: "",
         }
     }
 
@@ -59,7 +60,7 @@ class SearchPage extends Component {
                     ? 
                     <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} />
                     : 
-                    <img src="https://i.ytimg.com/vi/_O5Yo0tzKDU/maxresdefault.jpg"/>
+                    <img src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="100%" width="20%"  />
                 }
                 <span className="gametitle">{game.name}</span> <br></br>
                     
@@ -75,9 +76,12 @@ class SearchPage extends Component {
         })
 
         return(
-            <div>
-                <h1>{this.state.msg}</h1>
+            <div className="searchStuff">
+                <h1 className="noResults">{this.state.msg}</h1>
+                {this.state.img}
                  {gameLiist} 
+                 {/* <h1>No Results Found</h1>
+                 <img src={process.env.PUBLIC_URL + '/results.png'} height="50%" width="50%" /> */}
                  </div>
           
         // <h1>hello</h1>
@@ -115,14 +119,16 @@ class SearchPage extends Component {
             if (response.data.length === 0  ){
                 this.setState({
                     responseData: !this.state.responseData,
-                    msg: "bad data",
+                    msg:  'No Results Found', 
+                    img: <img src={process.env.PUBLIC_URL + '/results.png'} height="45%" width="50%" />,
                     SeachResults: gameData
                 })
             }
             else{
             this.setState({ 
                 SeachResults: gameData,
-                msg: ""
+                msg: "",
+                img: ""
 
             })
         }

@@ -38,6 +38,15 @@ h1{
 	margin-bottom:4rem
 }
 
+/* no results for the search page */
+.noResults{
+    font-family:"Passion One",sans-serif !important;
+    color:#fff !important;
+    font-size:5rem !important;
+	margin-top: 5rem !important;
+	margin-bottom:0 !important;
+}
+
 .title{
     color: #7300e6;
 }
