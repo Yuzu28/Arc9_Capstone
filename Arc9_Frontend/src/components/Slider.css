@@ -38,13 +38,23 @@ h1{
 	margin-bottom:4rem
 }
 
+.whatwedo{
+    font-family:"Passion One",sans-serif !important;
+    color:#fff !important;
+    font-size:5rem !important;
+	margin-top: 5rem !important;
+    margin-bottom:0 !important;
+    text-align: center !important;
+
+}
 /* no results for the search page */
 .noResults{
     font-family:"Passion One",sans-serif !important;
     color:#fff !important;
     font-size:5rem !important;
 	margin-top: 5rem !important;
-	margin-bottom:0 !important;
+    margin-bottom:0 !important;
+    text-align: center !important;
 }
 
 .title{
@@ -184,6 +194,16 @@ and (orientation : portrait) { .aa {
         padding:5px;
     
     } h4{font-size: 2rem !important;}
+
+    .noResults{
+        font-size:3rem !important;
+
+    }
+
+    .whatwedo{
+        font-size:3rem !important;
+
+    }
 
 }    
 

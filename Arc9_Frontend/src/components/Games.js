@@ -94,13 +94,7 @@ class Games extends Component{
                         <span className="gametitle">{game.name}</span> <br></br>
                         <span className="dataRelease">Date Release: {game.release_dates[0].human}</span>
 
-                        {/* <ul>
-                            <li className="gametitle">
-                            {game.name}
-                            </li>
-                            <li className="gametitle">Date Release: {game.release_dates[0].human}</li>
-                        </ul> */}
-                        
+                      
                     </div>
 
                     
@@ -158,3 +152,4 @@ export default Games;
 
 //top rated games sorted
 // data: `fields age_ratings.rating,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where platforms =(3,9,6,11,12,48) & cover !=n & rating >= 80; sort rating  desc; limit 20;`
+//commentts
