@@ -56,13 +56,34 @@ import axios from 'axios'
     }
     submitSignup = async(e)=>{
         e.preventDefault()
-        
         const data = this.state
         console.log(window.apiHost)
-        const url = `${window.apiHost}/users/signup`
+        const url = `${window.apiHost}/users/signup`;
         const axiosResponse = await axios.post(url, data)
         console.log(axiosResponse)
     }
+
+    enterUsername= (e) =>{
+        this.setState({username: e.target.value})
+
+    }
+
+    enterPassword= (e) =>{
+        this.setState({password: e.target.value})
+
+    }
+
+
+    submitLogin = async (e)=>{
+        e.preventDefault()
+        const data = this.state
+        const url = `${window.apiHost}/users/login`;
+        const axiosResponse = await axios.post(url, data)
+        console.log(axiosResponse)
+
+    }
+
+  
    
 
    
@@ -101,7 +122,7 @@ import axios from 'axios'
                                 <div className="text-center" >
                                     <h3 className="formName"><b>Register</b></h3>
                                 </div>
-                                <form id="ajax-register-form" action="" method="post" role="form" autoComplete="off">
+                                <form onSubmit={this.submitSignup} id="ajax-register-form" action="" method="post" role="form" autoComplete="off">
                                     <div className="form-group">
                                         <input type="text" name="username" id="username" tabIndex="1" className="form-control"
                                         placeholder="Username" onChange={this.handleUsername} value={this.state.username}  />
@@ -122,7 +143,7 @@ import axios from 'axios'
                                         <div className="row">
                                             <div className="col-12 ">
                                                 <input type="submit" name="register-submit" id="register-submit" tabIndex="4"
-                                            className="form-control btn btn-primary" value="Register Now" onClick={this.submitSignup}/>
+                                            className="form-control btn btn-primary" value="Register Now" />
                                             </div>
                                         </div>
                                     </div>
@@ -146,23 +167,23 @@ import axios from 'axios'
                 <div className="text-center">
                     <h3 className="formName"><b>Log In</b></h3>
                 </div>
-                    <form id="ajax-login-form" action="" method="post" role="form" autoComplete="off">
+                    <form onSubmit={this.submitLogin} id="ajax-login-form" action="" method="post" role="form" autoComplete="off">
                         <div className="form-group">
                             <label htmlFor="username">Username</label>
                             <input type="text" name="username" id="username" tabIndex="1"
-                        className="form-control" placeholder="Username" value="" autoComplete="off" />
+                        className="form-control" placeholder="Username" onChange={this.enterUsername} value={this.state.username} autoComplete="off" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password" id="password" tabIndex="2" 
-                        className="form-control" placeholder="Password" autoComplete="off" />
+                        className="form-control" placeholder="Password" autoComplete="off" onChange={this.enterPassword} value={this.state.password}/>
                         </div>
                         <div className="form-group">
                             <div className="row">
                                 
                                 <div className="col-12">
                                     <input type="submit" name="login-submit" id="login-submit" tabIndex="4" 
-                                className="form-control btn btn-success" value="Log In" />
+                                className="form-control btn btn-success" value="Log In"  />
                                 </div>
                             </div>
                         </div>

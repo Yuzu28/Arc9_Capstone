@@ -1,4 +1,7 @@
 export default {
+<<<<<<< HEAD
+     api_key: "5f95e5ffbda92c3d8f563b37ef402197"
+=======
     //  api_key: "9506ba1962e5dd0dcd0e2a677905d8d2"
     // api_key: "145aab907019b163db8eeb61eebad053"
     // api_key: "5f95e5ffbda92c3d8f563b37ef402197"
@@ -8,6 +11,7 @@ export default {
     
 
 
+>>>>>>> c5951ed260d1a743d7e04217a3b103cfb1005925
 }
 
 // 5f95e5ffbda92c3d8f563b37ef402197
