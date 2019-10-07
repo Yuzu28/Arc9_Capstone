@@ -50,7 +50,9 @@ router.post('/login', (req, res, next)=>{
           console.log(userData)
           res.json(userData)
         }else{
-          res.send('Fail')
+          res.json({
+            msg: 'password incorrect'
+          })
         }
     }
   )
