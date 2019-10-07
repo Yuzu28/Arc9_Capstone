@@ -40,35 +40,34 @@ class SearchPage extends Component {
         console.log(this.state.msg);
 
         //game image url
-        const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_small_2x/"
+        const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         const gameLiist = this.state.SeachResults.map((game,index)=>{
-            // if (game.cover ===null){
-            //     return  ' ' 
-            // } else{}
-
-            // if (){
-            //     return <h1>Results Not Found</h1>
-            // }
-
-            
-
+         
 
             return( 
-                <div class="row">
-                <div className= "col-sm"  key={index}>
-                    {game.cover
-                    ? 
-                    <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} />
-                    : 
-                    <img src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="100%" width="20%"  />
-                }
-                <span className="gametitle">{game.name}</span> <br></br>
-                    
-            
-                  
+              
+              
 
+                <div className= "col-xs-12 col-3-lg-3 col-md-4 mb-2 work_img "  key={index}>
+                    
+                    <Link to={`/games/${game.id}`}>
+
+                    {game.cover? 
+                    <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"  />
+                    : 
+                    <img id= "ggg" src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="90%" width="90%"  />
+                }
+                    </Link>
+               
+
+
+
+                <div className="">
+                <span className="gametitle2">{game.name}</span> 
                 </div>
+            
                 </div>
+               
                   
           
             )
@@ -79,7 +78,14 @@ class SearchPage extends Component {
             <div className="searchStuff">
                 <h1 className="noResults">{this.state.msg}</h1>
                 {this.state.img}
-                 {gameLiist} 
+
+                <div class="container-fluid "> 
+                        <div class="row s3 "> 
+
+                            {gameLiist} 
+                        </div>
+                    </div>
+                 
                  {/* <h1>No Results Found</h1>
                  <img src={process.env.PUBLIC_URL + '/results.png'} height="50%" width="50%" /> */}
                  </div>
@@ -120,7 +126,7 @@ class SearchPage extends Component {
                 this.setState({
                     responseData: !this.state.responseData,
                     msg:  'No Results Found', 
-                    img: <img src={process.env.PUBLIC_URL + '/results.png'} height="45%" width="50%" />,
+                    img: <img id= "ggg2" src={process.env.PUBLIC_URL + '/results.png'} height="45%" width="50%" />,
                     SeachResults: gameData
                 })
             }
@@ -141,3 +147,5 @@ class SearchPage extends Component {
 
 
 export default SearchPage;
+
+//commentts
