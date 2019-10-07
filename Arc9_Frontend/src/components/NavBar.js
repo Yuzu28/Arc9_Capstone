@@ -14,6 +14,7 @@ import axios from 'axios'
         username: "",
         password: "",
         email: "",
+        active: false
        
     }
     }
@@ -75,11 +76,19 @@ import axios from 'axios'
 
 
     submitLogin = async (e)=>{
+        console.log(` active = ${this.state.active}`)
         e.preventDefault()
         const data = this.state
         const url = `${window.apiHost}/users/login`;
         const axiosResponse = await axios.post(url, data)
         console.log(axiosResponse)
+        if (axiosResponse.msg === 'password incorrect'){
+            this.setState({active: false})
+            console.log(` active = ${this.state.active}`)
+        }else{
+            this.setState({active: true})
+            console.log(` active = ${this.state.active}`)
+        }
 
     }
 

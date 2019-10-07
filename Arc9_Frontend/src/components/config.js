@@ -1,19 +1,6 @@
 export default {
-<<<<<<< HEAD
-     api_key: "5f95e5ffbda92c3d8f563b37ef402197"
-=======
-    //  api_key: "9506ba1962e5dd0dcd0e2a677905d8d2"
-    // api_key: "145aab907019b163db8eeb61eebad053"
-    // api_key: "5f95e5ffbda92c3d8f563b37ef402197"
-    api_key: "10068273437f8f3a35fddb7d15522754"
 
+     api_key: "f6d7467d3b9e94b45f7d1089fdd11a1e"
 
-    
-
-
->>>>>>> c5951ed260d1a743d7e04217a3b103cfb1005925
 }
 
-// 5f95e5ffbda92c3d8f563b37ef402197
-
-//api key is limit to 10,000 calls
