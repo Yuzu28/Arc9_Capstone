@@ -15,7 +15,7 @@ import {Link} from 'react-router-dom';
     render(){
         return(
             <section className="about container mnb-30">
-                <h1>What We do</h1>
+                <h1 className="whatwedo">What We do</h1>
               <div className="row">
 
             <div className="col-sm-4">
@@ -52,3 +52,4 @@ import {Link} from 'react-router-dom';
 }
 
 export default Home;
+//commentts
