@@ -6,7 +6,10 @@ import Home from './components/Home'
 import Slider from './components/Slider'
 import Games from './components/Games'
 import GamesSinglePage from './components/GamesSinglePage';
-import SearchPage from './components/SearchPage'
+import SearchPage from './components/SearchPage';
+
+import NavBarRedesign from './components/NavBarRedesign'
+
 
 function App() {
   return (
@@ -15,10 +18,15 @@ function App() {
       <Router>
 
         <Route path="/" component={NavBar} />
+        {/* <Route  path="/" component={NavBarRedesign} /> */}
+
+
         {/* <Route exact path="/" component={Home}/> */}
         <Route exact path="/" component={Slider}/>
         <Route exact path="/" component={Home}/>
+
         <Route exact path="/" component={Games}/>
+
         <Route exact path="/games/:gamesId" component={GamesSinglePage} />
 
 				<Route path="/search/:searchTerm" component={SearchPage} />
