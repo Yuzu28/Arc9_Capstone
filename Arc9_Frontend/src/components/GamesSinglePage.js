@@ -14,9 +14,25 @@ class GamesSinglePage extends Component {
     constructor(){
         super();
         this.state = {
-            SingleGame: []
+            SingleGame: [],
+            // favoriteGames: []
         }
     }
+
+
+    // toggleFave = e => {
+    //     const gamesName = e.target.name;
+    //     const newGame = this.state.favoriteGames;
+    //     newGame.forEach(game => {
+    //         if (game.name === gamesName) {
+    //             game.faved = !game.faved;
+    //         }
+    //       })
+      
+    //       this.setState({
+    //         favoriteGames: newGame
+    //       })
+    //     }
 
 
     componentDidMount(){
@@ -84,7 +100,7 @@ class GamesSinglePage extends Component {
             console.log(result)
             videos = result[0].map( (x,i)=> {
                 return(
-                    <div key={i} class="embed-responsive embed-responsive-16by9">
+                    <div key={i} className ="embed-responsive embed-responsive-16by9">
                         <iframe width="560" height="315" src={`https://www.youtube.com/embed/${x.video_id}`} frameBorder="0" allowFullScreen></iframe>
                     </div>
                  )
@@ -92,7 +108,7 @@ class GamesSinglePage extends Component {
         }else{
             videos = 
              <div>
-            <p class="aligncenter">
+            <p className="aligncenter">
 
             <img id= "eee" src={process.env.PUBLIC_URL + '/NoVideos.jpg'} height="90%" width="90%" alt="img" />
             </p>    
@@ -108,7 +124,7 @@ class GamesSinglePage extends Component {
             gamePhotos = result2[0].map( (x,i)=> {
                 return(
                     <div key={i}>
-                        <p class="aligncenter">
+                        <p className="aligncenter">
 
                         <img id= "eee" src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${x.image_id}.jpg`} height="90%" width="100%" alt="img" />
                         </p>    
@@ -118,7 +134,7 @@ class GamesSinglePage extends Component {
         }else{
             gamePhotos = 
             <div>
-            <p class="aligncenter">
+            <p className="aligncenter">
 
             <img id= "eee" src={process.env.PUBLIC_URL + '/NoScreenShots.jpg'} height="90%" width="90%" alt="img" />
             </p>    
@@ -317,14 +333,14 @@ class GamesSinglePage extends Component {
                         
 
 
-                        <div class="col-md-8">
+                        <div className="col-md-8">
                           <h2 className="nameOfGame">{game.name} </h2>
                           <p className="details">Date Release: {game.release_dates? `${game.release_dates[0].human}`: "TBD"} </p>
                           
 
 
-                            <h3 class="text-left overview">Summary</h3>
-                            <div class ="stuff text-left">
+                            <h3 className="text-left overview">Summary</h3>
+                            <div className ="stuff text-left">
                                     <p>{game.summary? `${game.summary}`: "TBD"}</p>                           
                             </div>
 
@@ -333,40 +349,40 @@ class GamesSinglePage extends Component {
                           </div>
                     </div>
                 
-                    <div class="row">
-                        <div class="col-md-4" id="#about">
+                    <div className="row">
+                        <div className="col-md-4" id="#about">
 
-                            <h3 class="text-center inform">Information</h3>
-                            <ul class="list-group text-left information">
-                            <li class="list-group-item"><strong>Genre </strong>   
+                            <h3 className="text-center inform">Information</h3>
+                            <ul className="list-group text-left information">
+                            <li className="list-group-item"><strong>Genre </strong>   
 
                                 <ul className="sss">
                                         <span className="infoStuff">
                                                 <li>{game.genres? `${game.genres[0].name}`: "TBD"}</li>
                                         </span></ul></li>
 
-                            <li class="list-group-item"><strong>Themes</strong> 
+                            <li className="list-group-item"><strong>Themes</strong> 
                                     <ul className="sss">
                                     {themes}
                                     
                                     </ul></li>
 
 
-                            <li class="list-group-item"><strong>Platforms</strong> <br></br>
+                            <li className="list-group-item"><strong>Platforms</strong> <br></br>
                                     <ul className="sss">
                                     {platforms}
                                     
                                     </ul></li>
 
                             {/* <li class="list-group-item"><strong>Themes: </strong> <span className="infoStuff">{game.themes? `${game.themes[0].name}`: "TBD"} </span> </li> */}
-                            <li class="list-group-item"><strong>Game Modes </strong> 
+                            <li className="list-group-item"><strong>Game Modes </strong> 
                                  <ul className="sss">
                                     {modes}
                                     
                                     </ul></li>
                                  
                               
-                            <li class="list-group-item"><strong>Player Perspectives</strong> 
+                            <li className="list-group-item"><strong>Player Perspectives</strong> 
 
                                      <ul className="sss">
                                         <span className="infoStuff">
@@ -375,7 +391,7 @@ class GamesSinglePage extends Component {
                             
                             
                     
-                            <li class="list-group-item"><strong>Franchise</strong> 
+                            <li className="list-group-item"><strong>Franchise</strong> 
                             <ul className="sss">
                                         <span className="infoStuff">
                                                 <li>{game.franchises? `${game.franchises[0].name}`: "TBD"}`: "TBD"}</li>
@@ -385,13 +401,13 @@ class GamesSinglePage extends Component {
                             
                             
                            
-                              <li class="list-group-item"><strong>Developers/Publishers</strong> <br></br>
+                              <li className="list-group-item"><strong>Developers/Publishers</strong> <br></br>
                                 <ul className="sss">
                                     {company}
                                     
                                     </ul></li>
                                 
-                                <li class="list-group-item"><strong>Alternative names</strong> 
+                                <li className="list-group-item"><strong>Alternative names</strong> 
                                          <ul className="sss">
                                     {alternative}
                                     
@@ -401,11 +417,11 @@ class GamesSinglePage extends Component {
                             </div>
 
 
-                             <div class="col-md-8" id="#about">
+                             <div className="col-md-8" id="#about">
 
-                              <div class="col-md-12">
-                            <h3 class="text-left overview">Game Videos</h3>
-                            <div class ="stuff kuro text-left">
+                              <div className="col-md-12">
+                            <h3 className="text-left overview">Game Videos</h3>
+                            <div className="stuff kuro text-left">
 
 
                             <Slider {...settings}>
@@ -430,9 +446,9 @@ class GamesSinglePage extends Component {
 
 {/* spearation */}
                          
-                         <div class="col-md-12 screenshotss">
-                            <h3 class="text-left overview">ScreenShots</h3>
-                            <div class ="stuff kuro text-left">
+                         <div className="col-md-12 screenshotss">
+                            <h3 className="text-left overview">ScreenShots</h3>
+                            <div className ="stuff kuro text-left">
                             <Slider {...settings}>
                                  {gamePhotos}
                                  </Slider>           
@@ -460,16 +476,16 @@ class GamesSinglePage extends Component {
                      
 
     
-    <div class="container">
-  <div class="row ">
+    <div className="container">
+  <div className="row ">
 
 
-    <div class="col align-self-end">
+    <div className="col align-self-end">
 
-    <div class="float-right">
-                                    <div class="well">
-                                         <a href={game.url} target="_blank" className="btn btn-primary webButton" >View on IGBN</a>
-                                         <Link to="/" className="btn btn-warning favButton" >Add to favorites</Link>
+    <div className="float-right">
+                                    <div className="well">
+                                         <a href={game.url} target="_blank"  className="btn btn-primary webButton" >View on IGBN</a>
+                                         <button type="button" className="btn btn-warning favButton" >Add to favorites </button>
 
                                             </div>
 
@@ -516,7 +532,7 @@ class GamesSinglePage extends Component {
         )
  }
 
-    }
+}
 
 
 export default GamesSinglePage;

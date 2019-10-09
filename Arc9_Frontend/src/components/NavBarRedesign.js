@@ -72,7 +72,7 @@ import axios from 'axios'
         return(
 
 <nav className="navbar navbar-light fixed-top navbar-expand-md" role="navigation">
-    <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="navbar-toggler-icon"></span></button> 
+    <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span className="navbar-toggler-icon"></span></button> 
         <Link to="/" className="navbar-brand" id="titleName" >  <span id="titleColor">Arc-9 </span> <u>Gaming</u></Link>
         <div id="navbar" className="collapse navbar-collapse">
 
@@ -104,9 +104,10 @@ import axios from 'axios'
                 <div className="text-center">
                     <h3 className="welcomeBack"><b>Welcome Back, jjjj</b></h3> <br></br>
 
-                    <h3 className="welcomeBack1"><b>Favorites</b></h3>
+                    <h3 className="welcomeBack1"><Link to="/games/favorites" className="btn btn-success  ">My Favorites</Link></h3>
                 </div>
-                    
+                {/* <Link to="/games/favorites" className="btn btn-success  ">My Favorites</Link> */}
+
             </div>
             </ul>
             

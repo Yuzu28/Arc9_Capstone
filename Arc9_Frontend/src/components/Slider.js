@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Slider.css';
-import {Link} from 'react-router-dom';
-import main from './images/main.jpg'
+// import {Link} from 'react-router-dom';
+// import main from './images/main.jpg'
 
 
 

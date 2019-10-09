@@ -7,6 +7,7 @@ import Slider from './components/Slider'
 import Games from './components/Games'
 import GamesSinglePage from './components/GamesSinglePage';
 import SearchPage from './components/SearchPage';
+import favorites from './components/favorites'
 
 import NavBarRedesign from './components/NavBarRedesign'
 
@@ -17,8 +18,8 @@ function App() {
       {/* <h1>check111</h1> */}
       <Router>
 
-        <Route path="/" component={NavBar} />
-        {/* <Route  path="/" component={NavBarRedesign} /> */}
+        {/* <Route path="/" component={NavBar} /> */}
+        <Route  path="/" component={NavBarRedesign} />
 
 
         {/* <Route exact path="/" component={Home}/> */}
@@ -30,6 +31,8 @@ function App() {
         <Route exact path="/games/:gamesId" component={GamesSinglePage} />
 
 				<Route path="/search/:searchTerm" component={SearchPage} />
+        <Route exact path="/games/favorites" component={favorites} />
+
 
         {/* <Route path="/results/" component={SearchPage} /> */}
 
