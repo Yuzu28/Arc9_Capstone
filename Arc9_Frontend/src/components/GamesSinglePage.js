@@ -18,6 +18,16 @@ class GamesSinglePage extends Component {
             // favoriteGames: []
         }
     }
+    addFav = ()=>{
+       
+        const gameId = this.state.SingleGame[0].id
+        const userId = JSON.parse(localStorage.getItem('userData')).id
+        const body={gameId: gameId,
+                    userId: userId}
+                    console.log(body)
+        axios.post(`${window.apiHost}/users/favorites`, body)
+    
+    }
 
 
     // toggleFave = e => {
@@ -485,7 +495,7 @@ class GamesSinglePage extends Component {
     <div className="float-right">
                                     <div className="well">
                                          <a href={game.url} target="_blank"  className="btn btn-primary webButton" >View on IGBN</a>
-                                         <button type="button" className="btn btn-warning favButton" >Add to favorites </button>
+                                         <button type="button" className="btn btn-warning favButton" onClick={this.addFav} >Add to favorites </button>
 
                                             </div>
 
