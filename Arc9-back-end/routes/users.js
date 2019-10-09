@@ -35,9 +35,9 @@ router.post('/signup', (req, res, next)=>{
 })
 
 router.post('/login', (req, res, next)=>{
-  const username = req.body.username
-  const password = req.body.password
-
+  const username = req.body.activeName
+  const password = req.body.activePass
+    console.log('username ', username )
   db.one(
     `select * from users where username = $1
     `,[username]
@@ -48,6 +48,7 @@ router.post('/login', (req, res, next)=>{
       const isCorrectPassword = bcrypt.compareSync(password, dbPassword)//hash's first string and compares it to the hasshed string
         if (isCorrectPassword){
           console.log(userData)
+          console.log(password, dbPassword, isCorrectPassword)
           res.json(userData)
         }else{
           res.json({
