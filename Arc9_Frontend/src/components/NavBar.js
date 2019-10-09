@@ -14,9 +14,21 @@ import axios from 'axios'
         username: "",
         password: "",
         email: "",
-        active: false
+        active: false,
+        activeName: "",
+        activePass: "",
        
     }
+    }
+    componentDidMount(){
+        const ls =localStorage.getItem('userData')
+        const userData = JSON.parse(ls)
+        console.log("this is user data ", userData)
+        if (userData !== null){
+            this.setState({active: true})
+            
+        }
+
     }
     changeSearch = (e)=>{
         this.setState({searchTerm: e.target.value})
@@ -28,17 +40,6 @@ import axios from 'axios'
         this.props.history.push(searchUrl);
     }
 
-
-    //getting the searchBar to work end ************************
-
-    // state = {
-        // username: "",
-        // password: "",
-        // email: "",
-       
-
-
-    // }
 
     handleUsername= (e) =>{
         this.setState({username: e.target.value})
@@ -65,12 +66,12 @@ import axios from 'axios'
     }
 
     enterUsername= (e) =>{
-        this.setState({username: e.target.value})
+        this.setState({activeName: e.target.value})
 
     }
 
     enterPassword= (e) =>{
-        this.setState({password: e.target.value})
+        this.setState({activePass: e.target.value})
 
     }
 
@@ -87,9 +88,17 @@ import axios from 'axios'
             console.log(` active = ${this.state.active}`)
         }else{
             this.setState({active: true})
+            localStorage.setItem('userData', JSON.stringify(axiosResponse.data))
+            console.log(axiosResponse)
             console.log(` active = ${this.state.active}`)
         }
 
+    }
+    submitLogout = (e)=>{
+        e.preventDefault()
+        this.setState({active: false})
+        localStorage.removeItem('userData')
+        console.log(localStorage)
     }
 
   
@@ -102,7 +111,7 @@ if (this.state.active === false){
         return(
 
 <nav className="navbar navbar-light fixed-top navbar-expand-md" role="navigation">
-    <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="navbar-toggler-icon"></span></button> 
+    <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span className="navbar-toggler-icon"></span></button> 
         <Link to="/" className="navbar-brand" id="titleName" >  <span id="titleColor">Arc-9 </span> <u>Gaming</u></Link>
         <div id="navbar" className="collapse navbar-collapse">
 
@@ -180,12 +189,12 @@ if (this.state.active === false){
                         <div className="form-group">
                             <label htmlFor="username">Username</label>
                             <input type="text" name="username" id="username" tabIndex="1"
-                        className="form-control" placeholder="Username" onChange={this.enterUsername} value={this.state.username} autoComplete="off" />
+                        className="form-control" placeholder="Username" onChange={this.enterUsername} value={this.state.activeName} autoComplete="off" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password" id="password" tabIndex="2" 
-                        className="form-control" placeholder="Password" autoComplete="off" onChange={this.enterPassword} value={this.state.password}/>
+                        className="form-control" placeholder="Password" autoComplete="off" onChange={this.enterPassword} value={this.state.activePass}/>
                         </div>
                         <div className="form-group">
                             <div className="row">
@@ -242,7 +251,7 @@ if (this.state.active === false){
                 </li>
             </ul> */}
                 <ul className="nav navbar-nav ml-auto navi">
-                    <li className=" nav-item"> <Link to="/" className="e nav-link"  > Logout <span className="caret"></span></Link>
+                    <li className=" nav-item"> <Link to="/" className="e nav-link" onClick={this.submitLogout} > Logout <span className="caret"></span></Link>
                         
                         </li>
     <li className="dropdown nav-item "> <Link to="/" className="dropdown-toggle nav-link flex-md-column" data-toggle="dropdown"><i className="fa fas fa-user"></i> <span className="caret"></span></Link>
