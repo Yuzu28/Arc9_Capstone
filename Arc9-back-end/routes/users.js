@@ -18,7 +18,7 @@ router.post('/signup', (req, res, next)=>{
 // })
 
   db.one(
-    `insert into users
+    `insert into users 
      (username, email, password) 
      values
      ($1,$2,$3)
@@ -58,6 +58,26 @@ router.post('/login', (req, res, next)=>{
     }
   )
 
+})
+
+router.post('/favorites', (req, res, next)=>{
+  console.log(req.body)
+  const gameId = req.body.gameId
+  const userId = req.body.userId
+
+  db.one(`
+  insert into favorites 
+  (user_id, game_id)
+  values
+  ($1,$2)
+  returning *
+  `, [userId, gameId])
+  .then(
+    (favData)=>{
+      console.log(favData)
+      res.json(favData)
+    }
+    )
 })
 
 module.exports = router;
