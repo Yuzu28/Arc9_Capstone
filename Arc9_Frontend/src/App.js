@@ -17,8 +17,8 @@ function App() {
       {/* <h1>check111</h1> */}
       <Router>
 
-        <Route path="/" component={NavBar} />
-        {/* <Route  path="/" component={NavBarRedesign} /> */}
+        {/* <Route path="/" component={NavBar} /> */}
+        <Route  path="/" component={NavBarRedesign} />
 
 
         {/* <Route exact path="/" component={Home}/> */}

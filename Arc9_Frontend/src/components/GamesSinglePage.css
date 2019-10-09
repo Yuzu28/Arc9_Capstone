@@ -1,0 +1,189 @@
+
+
+
+.crow{
+    margin-top: 7%;
+}
+
+
+.nameOfGame{
+    font-family:"Passion One",sans-serif;
+    color:white !important ;
+    text-align: left !important ;
+    /* margin-left: 6% !important ; */
+    margin-bottom: 2% !important ;
+    font-size: 3rem !important;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid #7300e6;
+     padding-bottom: 3px;
+
+}
+
+.details{
+    font-size: 1.2rem !important;
+    text-align: left !important ;
+    
+
+}
+
+.overview{
+    margin-top: 7%;
+     color: #7300e6;
+}
+
+.stuff{
+    background-color:white !important;
+    color: black;
+    padding: 2%;
+    border: 2px solid #7300e6;
+    
+  }
+
+.sss{
+    
+        list-style: none;
+        text-align: left;
+        padding: 0;
+    
+}
+
+.information{
+    color: black;
+}
+.inform{
+    color: #7300e6
+}
+.infoStuff{
+    color:#7300e6;
+}
+.list-group-item{
+    color: black;
+}
+
+  .list-group-item:hover{
+    background-color: black;
+    color: white;
+  }
+
+
+
+  /* .screenshotss{
+      margin-left: 33%;
+  } */
+
+  .eee{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aligncenter{
+    text-align: center;
+
+  }
+
+  /* //ipad */
+
+  /* @media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  { .screenshotss{
+    margin-left: 0 !important;
+}} */
+
+
+
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) { 
+
+
+    .screenshotss{
+        margin-left: 0 !important;
+    }
+
+
+
+}
+
+
+
+
+
+
+/* carosel style  */
+
+
+
+.stuff .slick-prev {
+    left: -6% !important;
+    z-index: 1;
+  }
+  .stuff .slick-next {
+    right: -5% !important;
+    z-index: 1;
+  } 
+
+  /* .stuff .slick-dots {
+
+    color: orange !important;
+  } */
+
+  .kuro .slick-dots li button:before {
+      color: black;
+      line-height: 0px;
+  }
+
+
+
+  .stuff .slick-prev:before,
+  .stuff .slick-next:before {
+    color: #7300e6!important;
+    /* font-size: 10%; */
+  }
+
+
+  .homeButton{
+    margin-bottom: 41%;
+    color: white;
+    font-family:"Passion One",sans-serif;
+    font-size: 1.3rem;
+    background-color: #00cc00;
+
+
+
+  } 
+
+  .btn-success:hover{
+      color: white !important;
+  }
+
+  .webButton{
+      color: white;
+      font-family:"Passion One",sans-serif;
+      font-size: 1.3rem;
+
+
+  }
+
+  .btn-warning{
+      color: black;
+      font-family:"Passion One",sans-serif;
+      background-color: yellow;
+      font-size: 1.3rem;
+
+  }
+
+  .btn-warning:hover{
+    color: white !important;
+}
+
+
+  .well{
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+  
+ 
+
+  
+  
