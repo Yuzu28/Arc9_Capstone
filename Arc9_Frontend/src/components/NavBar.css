@@ -123,3 +123,17 @@ and (orientation : landscape) {#titleName{
 
   }
 
+  .welcomeBack{
+	  color: black;
+	  font-family: 'Raleway', sans-serif !important;
+
+  }
+
+  .welcomeBack1{
+	  color: black;
+	  font-family: 'Raleway', sans-serif !important;
+	  text-decoration: underline;
+
+
+
+  }
