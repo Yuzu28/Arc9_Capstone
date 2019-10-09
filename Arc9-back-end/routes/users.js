@@ -79,5 +79,18 @@ router.post('/favorites', (req, res, next)=>{
     }
     )
 })
+router.get('/favorites/:userID', (req, res, next)=>{
+   const userID = req.params.userID
+   return db.any(
+     `
+     select * from favorites where user_id = $1
+     `, [userID]
+   )
+   .then(
+     (results)=>{
+       res.json(results)
 
+     }
+   )
+})
 module.exports = router;
