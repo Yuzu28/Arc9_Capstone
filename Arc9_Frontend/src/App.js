@@ -19,7 +19,7 @@ function App() {
       <Router>
 
         {/* <Route path="/" component={NavBar} /> */}
-        <Route  path="/" component={NavBarRedesign} />
+        <Route  path="/" component={NavBar} />
 
 
         {/* <Route exact path="/" component={Home}/> */}
