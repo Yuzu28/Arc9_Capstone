@@ -89,7 +89,7 @@ class Games extends Component{
             return(
                 <div className="row s3"  key={index}>
                     <Link to={`/games/${game.id}`}>
-                        <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"/>
+                        <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%" alt="gameImage" />
                     </Link>
                         <span className="gametitle">{game.name}</span> <br></br>
                         <span className="dataRelease">Date Release: {game.release_dates[0].human}</span>

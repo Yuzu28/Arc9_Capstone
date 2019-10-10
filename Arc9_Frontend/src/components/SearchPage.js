@@ -53,9 +53,9 @@ class SearchPage extends Component {
                     <Link to={`/games/${game.id}`}>
 
                     {game.cover? 
-                    <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%"  />
+                    <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%" alt="gameImage"  />
                     : 
-                    <img id= "ggg" src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="90%" width="90%"  />
+                    <img id= "ggg" src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="90%" width="90%" alt="gameImage"  />
                 }
                     </Link>
                
@@ -126,7 +126,7 @@ class SearchPage extends Component {
                 this.setState({
                     responseData: !this.state.responseData,
                     msg:  'No Results Found', 
-                    img: <img id= "ggg2" src={process.env.PUBLIC_URL + '/results.png'} height="45%" width="50%" />,
+                    img: <img id= "ggg2" src={process.env.PUBLIC_URL + '/results.png'} height="45%" width="50%" alt="gameImage" />,
                     SeachResults: gameData
                 })
             }
