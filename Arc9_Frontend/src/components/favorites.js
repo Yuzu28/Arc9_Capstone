@@ -32,6 +32,9 @@ import {Link} from 'react-router-dom';
 
         let favoritesGameIds = axiosResponse.data.map(x => x.game_id);
         console.log(favoritesGameIds);
+        this.setState({
+            FavGame: favoritesGameIds
+        })
 
         favoritesGameIds.forEach(this._getFavInfo)
 
@@ -74,6 +77,22 @@ import {Link} from 'react-router-dom';
 
     render(){
 
+
+        const favorites = this.state.FavGame.map((id)=>{
+            var gameinfo = this.state[id] ||{};
+            console.log(gameinfo);
+            return(
+                <div>
+                <h1>{gameinfo.name}</h1>
+                <Link to={`/games/${gameinfo.id}`}>
+
+                <img id= "ggg" src={`http:${gameinfo.url}`} height="90%" width="90%" alt="img" />
+                </Link>
+
+                </div>
+            )
+        })
+
         // const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         // console.log(this.state.FavGame);
         // const favoritegameList = this.state.FavGame.map((game,index)=>{
@@ -102,8 +121,9 @@ import {Link} from 'react-router-dom';
         //                     // </div> */}
 
         //                   </div>
+        // <hr className="horizontalLine"></hr>
+
         //             </div>
-        //             <hr className="horizontalLine"></hr>
 
 
 
@@ -124,7 +144,7 @@ import {Link} from 'react-router-dom';
         return(
             <div className="crow">
                              <h1>My Favorites</h1>
-
+                            {favorites || null}
 
                  {/* {favoritegameList}  */}
                 
