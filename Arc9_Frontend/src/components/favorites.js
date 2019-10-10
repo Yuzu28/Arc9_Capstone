@@ -48,7 +48,7 @@ import {Link} from 'react-router-dom';
             'Accept': 'application/json',
             'user-key': this.API_KEY
         },
-        data: `fields cover.height,cover.image_id,cover.url,cover.width,dlcs,name,release_dates.date,release_dates.human; where id = (${favId}); `
+        data: `fields cover.height,cover.image_id,cover.url,cover.width,dlcs,name,release_dates,release_dates.date,release_dates.human; where id = (${favId}); `
     })
         .then(response => {
             const gameData = response.data;
@@ -61,9 +61,11 @@ import {Link} from 'react-router-dom';
 
             this.setState({ 
                 [response.data[0].id]: {
-                    url:response.data[0].cover.url,
+                    cover:response.data[0].cover,
+                    url:response.data[0].cover.image_id,
                     name: response.data[0].name,
-                    id: response.data[0].id
+                    id: response.data[0].id,
+                    release_dates: response.data[0].release_dates,
                 }
             })
         })
@@ -76,27 +78,107 @@ import {Link} from 'react-router-dom';
 
 
     render(){
+        const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
 
 
-        const favorites = this.state.FavGame.map((id)=>{
+        const favorites = this.state.FavGame.map((id,index)=>{
             var gameinfo = this.state[id] ||{};
             console.log(gameinfo);
+            console.log(gameinfo.release_dates)
             return(
-                <div>
-                <h1>{gameinfo.name}</h1>
+                // <div>
+                // <h1>{gameinfo.name}</h1>
+                // <Link to={`/games/${gameinfo.id}`}>
+
+                // <img id= "ggg" src={`http:${gameinfo.url}`} height="90%" width="90%" alt="img" />
+                // </Link>
+
+                // </div>
+                <div className="container" key={index} >
+
+                <div className="row">
+                <div className="col-md-4" >
                 <Link to={`/games/${gameinfo.id}`}>
 
-                <img id= "ggg" src={`http:${gameinfo.url}`} height="90%" width="90%" alt="img" />
-                </Link>
-
+                {gameinfo.cover? 
+            <img id= "ggg" src={`${gameCoverUrl}${gameinfo.url}.jpg`} height="90%" width="90%" alt="img" />
+            : 
+            <img id= "ggg" src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="90%" width="90%" alt="img"   />
+        }
+        </Link>
                 </div>
+                <div className="col-md-8">
+                  <h2 className="nameOfGame">{gameinfo.name} </h2>
+                  <p className="details">Date Release: {gameinfo.release_dates? `${gameinfo.release_dates[0].human}`: "TBD"} </p>
+                  <button type="button" className="btn btn-warning favButton float-right " onClick={console.log("im clicking")} >Remove from Favorites </button>
+
+                    {/* // <h3 className="text-left overview">Summary</h3>
+                    // <div className ="stuff text-left">
+                    //         <p>{game.summary? `${game.summary}`: "TBD"}</p>                           
+                    // </div> */}
+
+                  </div>
+
+            </div>
+            <hr className="horizontalLine"></hr>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
             )
         })
 
         // const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         // console.log(this.state.FavGame);
         // const favoritegameList = this.state.FavGame.map((game,index)=>{
+
+
+
+              
             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //     return( 
         //     <div className="container" key={index} >
         //        <div className="row">
