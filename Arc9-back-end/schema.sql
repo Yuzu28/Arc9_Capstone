@@ -3,9 +3,13 @@ create table users
 username varchar(10),
 email varchar not null,
 password varchar(200),
-pic  varchar);
+pic varchar);
 
 
 create table favorites
 (game_id varchar,
-user_id integer references users(id));
+user_id integer references users(id),
+title varchar,
+pathname varchar,
+photo varchar, 
+);
