@@ -9,7 +9,7 @@ import GamesSinglePage from './components/GamesSinglePage';
 import SearchPage from './components/SearchPage';
 import favorites from './components/Favorites'
 
-import NavBarRedesign from './components/NavBarRedesign'
+// import NavBarRedesign from './components/NavBarRedesign'
 
 
 function App() {

@@ -22,7 +22,7 @@ import './Slider.css';
                         <div className="carousel-item active aa">
                         
                             <div className="carousel-caption " id="main">
-                            <div class="info">
+                            <div className="info">
                                         <div>
                                         <div className="container-fluid ">
                                             <h1><span className="title">Arc-9 </span> <u>Gaming</u></h1>

@@ -111,7 +111,7 @@ class GamesSinglePage extends Component {
             videos = result[0].map( (x,i)=> {
                 return(
                     <div key={i} className ="embed-responsive embed-responsive-16by9">
-                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${x.video_id}`} frameBorder="0" allowFullScreen></iframe>
+                        <iframe title="GameVideos" width="560" height="315" src={`https://www.youtube.com/embed/${x.video_id}`} frameBorder="0" allowFullScreen></iframe>
                     </div>
                  )
             })
@@ -174,6 +174,7 @@ class GamesSinglePage extends Component {
                                     </span>
 
         }
+        console.log(platforms);
 
        
 
@@ -423,6 +424,8 @@ class GamesSinglePage extends Component {
                                     
                                     </ul></li>
 
+                                    <li className="list-group-item"><a href={game.url} target="_blank"  className="btn btn-primary webButton" >View on IGBN</a></li>
+
                           </ul>
                             </div>
 
@@ -494,12 +497,12 @@ class GamesSinglePage extends Component {
 
     <div className="float-right">
                                     <div className="well">
-                                         <a href={game.url} target="_blank"  className="btn btn-primary webButton" >View on IGBN</a>
+                                         {/* <a href={game.url} target="_blank"  className="btn btn-primary webButton" >View on IGBN</a> */}
                                          <button type="button" className="btn btn-warning favButton" onClick={this.addFav} >Add to favorites </button>
+                                         <Link to="/" className="btn btn-success float-right homeButton" >Go Back To Home</Link>
 
                                             </div>
 
-                                        <Link to="/" className="btn btn-success float-right homeButton" >Go Back To Home</Link>
 
 
 
