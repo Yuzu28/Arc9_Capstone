@@ -1,25 +1,3 @@
-// import React, {Component} from 'react';
-// import './NavBar.css';
-
-
-//  class favorites extends Component{
-
-    
-   
-//     render(){
-
-//         return(
-//             <h1>My Favorites</h1>
-
-
-
-//         )
-//     }
-// }
-
-// export default favorites;
-
-
 import React, {Component} from 'react';
 import './NavBar.css';
 import config from './config';
@@ -36,79 +14,64 @@ import {Link} from 'react-router-dom';
             game_id : "",
             user_id : ""
         }
+         this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+         this.API_KEY = `${config.api_key}`;
     }
 
 
 
     async componentDidMount (){
 
-        var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-        const API_KEY = `${config.api_key}`;
+        
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         const url = `${window.apiHost}/users/favorites`;
         const axiosResponse = await axios.get(url + `/${JSON.parse(localStorage.getItem('userData')).id}`)
         console.log(axiosResponse.data)
 
-
         // const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
-
-
-
 
         let favoritesGameIds = axiosResponse.data.map(x => x.game_id);
         console.log(favoritesGameIds);
 
-        // favoritesGameIds.forEach(
+        favoritesGameIds.forEach(this._getFavInfo)
 
-
-
-        
-
-     
-       
-    //     axios({
-
-    //         // where id = (${allgamesIds})
-
-    //     url: proxyUrl + `https://api-v3.igdb.com/games/`,
-    //     method: 'POST',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'user-key': API_KEY
-    //     },
-    //     data: `fields aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where id = 119506; `
-    // })
-
-    axios({
-        url: proxyUrl + `https://api-v3.igdb.com/games/?search=kirby&fields=cover.image_id,cover.url,hypes,name,release_dates.human&id=3722;`,
-        // var encoded = encodeURI(uri);
-
-        method: 'GET',
+    }
+    _getFavInfo = (favId)=>{
+        axios({
+            // where id = (${allgamesIds})
+        url: this.proxyUrl + `https://api-v3.igdb.com/games/`,
+        method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'user-key': API_KEY
+            'user-key': this.API_KEY
         },
+        data: `fields cover.height,cover.image_id,cover.url,cover.width,dlcs,name,release_dates.date,release_dates.human; where id = (${favId}); `
     })
         .then(response => {
             const gameData = response.data;
             // console.log(gameData);
             console.log(response.data);
-            // console.log(response.data[0].url);
-            this.setState({ 
-                FavGame: gameData
+            console.log(response.data[0].cover.url);
+            console.log(response.data[0].name);
+            console.log(response.data[0].id);
 
+
+            this.setState({ 
+                [response.data[0].id]: {
+                    url:response.data[0].cover.url,
+                    name: response.data[0].name,
+                    id: response.data[0].id
+                }
             })
         })
         .catch(err => {
             console.error(err);
         });
-
-
     }
-        
 
-    
-   
+
+
+
     render(){
 
         // const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
@@ -162,6 +125,7 @@ import {Link} from 'react-router-dom';
             <div className="crow">
                              <h1>My Favorites</h1>
 
+
                  {/* {favoritegameList}  */}
                 
           </div>
@@ -172,6 +136,15 @@ import {Link} from 'react-router-dom';
 
         )
     }
+
+
+
+
+
+
+
+
 }
+
 
 export default favorites;
