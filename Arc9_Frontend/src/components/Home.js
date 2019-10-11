@@ -30,9 +30,9 @@ import './Home.css';
             <div className="col-sm-4">
               <div className="feature angled-bg">
                 <i className="fa fa-heartbeat"></i>
-                <h3>Reviews</h3>
+                <h3>Single Game Page</h3>
                 <div>
-                  Leave and write reviews on the games you love and hate. 
+                  Get info such as summary, videos, screenshots, etc.  
                 </div>
               </div>
             </div>
