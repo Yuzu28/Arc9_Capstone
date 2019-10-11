@@ -258,9 +258,10 @@ if (this.state.active === false){
         <ul className="dropdown-menu dropdown-menu-right dropdown-lr  "  role="menu">
             <div className="col-xl-12">
                 <div className="text-center">
-                    <h3 className="welcomeBack"><b>Welcome Back, jjjj</b></h3> <br></br>
+                    <h3 className="welcomeBack"><b>Welcome Back, <span className="userLoginName">jjjj</span></b></h3> <br></br>
+                    {/* {this.userData.username} */}
 
-                    <h3 className="welcomeBack1"><Link to="/games/favorites" className="btn btn-success  ">My Favorites</Link></h3>
+                    <h3 className="welcomeBack1"><Link to="/users/favorites" className="btn btn-success  ">My Favorites</Link></h3>
                 </div>
                     
             </div>

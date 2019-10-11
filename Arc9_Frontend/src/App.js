@@ -39,8 +39,9 @@ function App() {
         <Route exact path="/games/:gamesId" component={GamesSinglePage} />
 
 				<Route path="/search/:searchTerm" component={SearchPage} />
-        <Route exact path="/games/favorites" component={favorites} />
+        <Route exact path="/users/favorites" component={favorites} />
 
+        {/* <Route exact path="/games/favorites" component={favorites} /> */}
 
         {/* <Route path="/results/" component={SearchPage} /> */}
 
