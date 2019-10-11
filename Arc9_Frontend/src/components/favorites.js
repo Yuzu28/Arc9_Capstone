@@ -74,7 +74,12 @@ import {Link} from 'react-router-dom';
         });
     }
 
-
+    removeFav = (gameID)=>{
+        
+        console.log(`we want to remove a fav`)
+        console.log(gameID)
+        //axios.post(`${window.apiHost}/users/favorites/${game_id}`, this.state)
+    }
 
 
     render(){
@@ -110,7 +115,10 @@ import {Link} from 'react-router-dom';
                 <div className="col-md-8">
                   <h2 className="nameOfGame">{gameinfo.name} </h2>
                   <p className="details">Date Release: {gameinfo.release_dates? `${gameinfo.release_dates[0].human}`: "TBD"} </p>
-                  <button type="button" className="btn btn-warning favButton float-right " onClick={console.log("im clicking")} >Remove from Favorites </button>
+                  <button type="button" className="btn btn-warning favButton float-right " onClick={(e)=>{
+                      e.preventDefault();
+                      this.removeFav(gameinfo.id)
+                  }} >Remove from Favorites </button>
 
                     {/* // <h3 className="text-left overview">Summary</h3>
                     // <div className ="stuff text-left">

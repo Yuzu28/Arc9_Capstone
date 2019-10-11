@@ -99,6 +99,21 @@ router.get('/favorites/:userID', (req, res, next)=>{
    )
 })
 
+router.post('/favorites/:gameID', (req, res, next)=>{
+  const gameID = req.params.gameID
+  return db.any(
+    `
+    remove * from favorites where game_id = $1
+    `, [gameID]
+  )
+  .then(
+    (results)=>{
+      res.json(results)
+
+    }
+  )
+})
+
 // router.get('/favorites/:photo', (req, res, next)=>{
 //   const photo = req.params.photo
 //   return db.any(
