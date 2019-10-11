@@ -172,57 +172,6 @@ import {Link} from 'react-router-dom';
 
 
 
-
-
-
-
-
-
-
-        //     return( 
-        //     <div className="container" key={index} >
-        //        <div className="row">
-        //                 <div className="col-md-4" >
-        //                 <Link to={`/games/${game.id}`}>
-
-        //                 {game.cover? 
-        //             <img id= "ggg" src={`${gameCoverUrl}${game.cover.image_id}.jpg`} height="90%" width="90%" alt="img" />
-        //             : 
-        //             <img id= "ggg" src={process.env.PUBLIC_URL + '/coverNot.jpg'} height="90%" width="90%" alt="img"   />
-        //         }
-        //         </Link>
-        //                 </div>
-        //                 <div className="col-md-8">
-        //                   <h2 className="nameOfGame">{game.name} </h2>
-        //                   <p className="details">Date Release: {game.release_dates? `${game.release_dates[0].human}`: "TBD"} </p>
-        //                   <button type="button" className="btn btn-warning favButton float-right " onClick={console.log("im clicking")} >Remove from Favorites </button>
-
-        //                     {/* // <h3 className="text-left overview">Summary</h3>
-        //                     // <div className ="stuff text-left">
-        //                     //         <p>{game.summary? `${game.summary}`: "TBD"}</p>                           
-        //                     // </div> */}
-
-        //                   </div>
-        // <hr className="horizontalLine"></hr>
-
-        //             </div>
-
-
-
-                    
-                
-        //            </div>
-
-        //     )
-        // })
-
-
-
-
-
-
-
-
         return(
             <div className="crow">
                              <h1>My Favorites</h1>
