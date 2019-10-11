@@ -25,7 +25,9 @@ import axios from 'axios'
         const userData = JSON.parse(ls)
         console.log("this is user data ", userData)
         if (userData !== null){
-            this.setState({active: true})
+            this.setState({active: true, username: userData.username})
+            // this.username= userData.username;
+
             
         }
 
@@ -54,7 +56,7 @@ import axios from 'axios'
     handleEmail= (e) =>{
         this.setState({email: e.target.value})
 
-        
+                
     }
     submitSignup = async(e)=>{
         e.preventDefault()
@@ -87,8 +89,12 @@ import axios from 'axios'
             this.setState({active: false})
             console.log(` active = ${this.state.active}`)
         }else{
-            this.setState({active: true})
+            this.setState({active: true, username: axiosResponse.data.username })
             localStorage.setItem('userData', JSON.stringify(axiosResponse.data))
+
+
+
+
             console.log(axiosResponse)
             console.log(` active = ${this.state.active}`)
         }
@@ -96,7 +102,7 @@ import axios from 'axios'
     }
     submitLogout = (e)=>{
         e.preventDefault()
-        this.setState({active: false})
+        this.setState({active: false, username: ""})
         localStorage.removeItem('userData')
         console.log(localStorage)
     }
@@ -258,7 +264,7 @@ if (this.state.active === false){
         <ul className="dropdown-menu dropdown-menu-right dropdown-lr  "  role="menu">
             <div className="col-xl-12">
                 <div className="text-center">
-                    <h3 className="welcomeBack"><b>Welcome Back, <span className="userLoginName">jjjj</span></b></h3> <br></br>
+                    <h3 className="welcomeBack"><b>Welcome Back, <span className="userLoginName">{this.state.username}</span></b></h3> <br></br>
                     {/* {this.userData.username} */}
 
                     <h3 className="welcomeBack1"><Link to="/users/favorites" className="btn btn-success  ">My Favorites</Link></h3>

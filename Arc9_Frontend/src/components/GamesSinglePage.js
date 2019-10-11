@@ -18,8 +18,9 @@ class GamesSinglePage extends Component {
             // favoriteGames: []
         }
     }
-    addFav = ()=>{
+    addFav = (e)=>{
        
+        e.preventDefault();
         const gameId = this.state.SingleGame[0].id
         const userId = JSON.parse(localStorage.getItem('userData')).id
         const body={gameId: gameId,
