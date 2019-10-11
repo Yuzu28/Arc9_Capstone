@@ -42,7 +42,7 @@ class Games extends Component{
         .then(response => {
             const gameData = response.data;
             // console.log(gameData);
-            console.log(response.data);
+            // console.log(response.data);
             this.setState({ 
                 GameComingSoon: gameData
 
@@ -52,7 +52,6 @@ class Games extends Component{
             console.error(err);
         });
 
-        // data: "fields name,summary,url,cover,popularity,cover.url;sort popularity desc;limit 13;"
 
     }
 
@@ -66,23 +65,8 @@ class Games extends Component{
             slidesToShow: 5,
             slidesToScroll: 5,
            
-            // dots: true,
-            // infinite: true,
-            // speed: 1000,
-            // slidesToShow: 3,
-            // slidesToScroll: 3,
-            // autoplay: true,
-            // lazyLoad: true,
-            // centerMode: true,
-            // adaptiveHeight: true,
-            // fade: true,
-            // arrows: true,
-            // autoplaySpeed: 5000,
-            // className: 'slides'
           };
-        // console.log(this.state.GameComingSoon)
-        // images.igdb.com/igdb/image/upload/t_thumb/oejlmvjvjz7gellep3xw.jpg
-        
+       
        
         const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
         const gameList = this.state.GameComingSoon.map((game,index)=>{
@@ -109,6 +93,11 @@ class Games extends Component{
              {gameList}
             
         </Slider>
+        <hr className="horizontalLine"></hr>
+        <div className="footer">
+  <p>Copyright © Arc-9 Gameing 2019</p>
+</div>
+
       </div>
 
     )
@@ -119,27 +108,6 @@ class Games extends Component{
 
 
 export default Games;
-
-// height="60%" width="60%"
-
-
-
-//         <div class="carousel-item">
-//         {gameList}
-  
-// </div>
-        
-
-
-
-        // <div class="row">
-        //   <div class="col-md-8 col-md-offset-2">
-        //     <div class="responsive-embed responsive-embed-16x9">
-        //       <iframe width="560" height="315" src="https://www.youtube.com/embed/pZ3gFlg6IDs" frameborder="0" allowfullscreen></iframe>
-        //     </div>
-        //   </div>
-        // </div>
-        
 
 //find the recently released games and must have a photo
 //data: `fields age_ratings.rating,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where platforms =(3,9,6,11,12,48) & cover !=n & first_release_date < ${timestamp}; sort first_release_date desc; limit 20;

@@ -35,14 +35,31 @@ import './Slider.css';
 
                                 <div className="carousel-caption bird" id="sub">
                                 <h4>Search for Any Games</h4>
-                                <p>hello Im just writing random stuff</p>
+                                <p>Users can search through a large variety of games in our database</p>
                                 <br></br>
                             </div>
                         </div>
                         <div className="carousel-item cc">
+                        <div className="carousel-caption bird" id="sub">
+                                    <h4>Single Game Page</h4>
+                                    <p>Get infomation about a certain game such as their <br></br>
+                                        summary, videos, screenshots, etc.
+                                        
+                                         </p>
+
+                                    <br></br>
+                                </div>
                         </div>
 
                         <div className="carousel-item dd">
+                        <div className="carousel-caption bird" id="sub">
+                                    <h4>Favorite your Favorite Games</h4>
+                                    <p> Users can favorite and saved their favorite games.
+                                        
+                                         </p>
+
+                                    <br></br>
+                                </div>
                         </div>
 
                         <div className="carousel-item ee">
