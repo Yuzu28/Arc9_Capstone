@@ -77,15 +77,16 @@ import {Link} from 'react-router-dom';
     removeFav = (game_id)=>{
        
         const userId = JSON.parse(localStorage.getItem('userData')).id
-        const body={
-                    userId: userId}
-                    
+        const body={ userId: userId}
+
                     console.log(body)
 
         console.log(`we want to remove a fav`)
         console.log(game_id)
         axios.post(`${window.apiHost}/users/favorites/${game_id}`, body)
-        
+
+        window.location.reload()
+
     }
 
 
