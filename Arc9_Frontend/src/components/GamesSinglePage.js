@@ -30,21 +30,6 @@ class GamesSinglePage extends Component {
     }
 
 
-    // toggleFave = e => {
-    //     const gamesName = e.target.name;
-    //     const newGame = this.state.favoriteGames;
-    //     newGame.forEach(game => {
-    //         if (game.name === gamesName) {
-    //             game.faved = !game.faved;
-    //         }
-    //       })
-      
-    //       this.setState({
-    //         favoriteGames: newGame
-    //       })
-    //     }
-
-
     componentDidMount(){
 
         var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
@@ -551,7 +536,6 @@ class GamesSinglePage extends Component {
 export default GamesSinglePage;
 
 
-//commentts
 
 
   

@@ -7,7 +7,10 @@ import Slider from './components/Slider'
 import Games from './components/Games'
 import GamesSinglePage from './components/GamesSinglePage';
 import SearchPage from './components/SearchPage';
-import favorites from './components/favorites'
+import PopularGames from './components/PopularGames';
+import RecentlyReleased from './components/RecentlyReleased'
+
+import favorites from './components/favorites';
 
 // import NavBarRedesign from './components/NavBarRedesign'
 
@@ -26,8 +29,12 @@ function App() {
         {/* <Route exact path="/" component={Home}/> */}
         <Route exact path="/" component={Slider}/>
         <Route exact path="/" component={Home}/>
+        
+        <Route exact path="/" component={PopularGames}/>
+        <Route exact path="/" component={RecentlyReleased}/>
 
         <Route exact path="/" component={Games}/>
+
 
         <Route exact path="/games/:gamesId" component={GamesSinglePage} />
 
