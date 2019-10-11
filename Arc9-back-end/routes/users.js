@@ -61,9 +61,9 @@ router.post('/login', (req, res, next)=>{
 })
 
 router.post('/favorites', (req, res, next)=>{
-  console.log(req.body)
-  const gameId = req.body.gameId
-  const userId = req.body.userId
+  console.log('line 64 /favorites post route', req.body)
+  const game_id = req.body.gameId
+  const user_id = req.body.userId
   // const title = req.body.title
   // const pathname = req.body.pathname
   // const photo = req.body.photo
@@ -74,7 +74,7 @@ router.post('/favorites', (req, res, next)=>{
   values
   ($1,$2)
   returning *
-  `, [userId, gameId])
+  `, [user_id, game_id])
   .then(
     (favData)=>{
       console.log(favData)
@@ -85,11 +85,12 @@ router.post('/favorites', (req, res, next)=>{
 
 
 router.get('/favorites/:userID', (req, res, next)=>{
-   const userID = req.params.userID
+   const user_id = req.params.userID
    return db.any(
      `
      select * from favorites where user_id = $1
-     `, [userID]
+
+     `, [user_id]
    )
    .then(
      (results)=>{
@@ -97,6 +98,30 @@ router.get('/favorites/:userID', (req, res, next)=>{
 
      }
    )
+})
+
+router.post('/favorites/:game_id', (req, res, next)=>{
+  console.log("DO SOMETHING!", req.params)
+  console.log(req.body)
+  const user_id = req.body.userId
+  const game_id = req.params.game_id
+  
+  return db.any(
+    `
+    delete from favorites where user_id = $1 and  game_id = $2;
+    `, [user_id, game_id]
+  )
+  .then(
+    (err, results)=>{
+      console.log('GAME REMOVED')
+      if(err) throw err;
+      res.json(results)
+
+    }
+  )
+  .catch((err) => {
+    console.log('The was a problem in the db', err);
+  })
 })
 
 // router.get('/favorites/:photo', (req, res, next)=>{
