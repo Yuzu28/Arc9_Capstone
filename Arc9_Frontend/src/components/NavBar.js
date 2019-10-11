@@ -175,7 +175,7 @@ if (this.state.active === false){
                                      <div className="form-group">
                                     <div className="row">
                                         <div className="col-xl-12">
-                                            <div className="text-center"> Already have an account? <Link to="/" tabIndex="5" className="forgot-password"> Login </Link>
+                                            <div className="text-center"> Already have an account? <br></br>Go to Login 
                                             </div>
                                         </div>
                                     </div>
@@ -214,7 +214,7 @@ if (this.state.active === false){
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-xl-12">
-                                    <div className="text-center"> Looking to <Link to="/" tabIndex="5" className="forgot-password">Create an Account ?</Link>
+                                    <div className="text-center"> Dont have an Account? <br></br> Go to Register
                                     </div>
                                 </div>
                             </div>
