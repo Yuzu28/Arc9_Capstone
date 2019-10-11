@@ -7,9 +7,6 @@ pic varchar);
 
 
 create table favorites
-(game_id varchar,
-user_id integer references users(id),
-title varchar,
-pathname varchar,
-photo varchar, 
+(game_id integer,
+user_id integer references users(id) 
 );
