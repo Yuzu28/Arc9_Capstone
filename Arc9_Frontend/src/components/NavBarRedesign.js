@@ -104,9 +104,8 @@ import axios from 'axios'
                 <div className="text-center">
                     <h3 className="welcomeBack"><b>Welcome Back, jjjj</b></h3> <br></br>
 
-                    <h3 className="welcomeBack1"><Link to="/games/favorites" className="btn btn-success  ">My Favorites</Link></h3>
+                    <h3 className="welcomeBack1"><Link to="/users/favorites" className="btn btn-success  ">My Favorites</Link></h3>
                 </div>
-                {/* <Link to="/games/favorites" className="btn btn-success  ">My Favorites</Link> */}
 
             </div>
             </ul>
