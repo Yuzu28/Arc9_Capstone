@@ -64,17 +64,17 @@ router.post('/favorites', (req, res, next)=>{
   console.log(req.body)
   const gameId = req.body.gameId
   const userId = req.body.userId
-  const title = req.body.title
-  const pathname = req.body.pathname
-  const photo = req.body.photo
+  // const title = req.body.title
+  // const pathname = req.body.pathname
+  // const photo = req.body.photo
 
   db.one(`
   insert into favorites 
-  (user_id, game_id, title, pathname, photo)
+  (user_id, game_id)
   values
-  ($1,$2,$3,$4)
+  ($1,$2)
   returning *
-  `, [userId, gameId, title, pathname, photo])
+  `, [userId, gameId])
   .then(
     (favData)=>{
       console.log(favData)
@@ -99,21 +99,21 @@ router.get('/favorites/:userID', (req, res, next)=>{
    )
 })
 
-router.get('/favorites/:photo', (req, res, next)=>{
-  const photo = req.params.photo
-  return db.any(
-    `
-    select * from favorites where user_id = $1
-    `, [photo]
-  )
-  .then(
-    (results)=>{
-      console.log(`.get:/photo 
-      ${results}`)
-      res.json(results)
-    }
-  )
-})
+// router.get('/favorites/:photo', (req, res, next)=>{
+//   const photo = req.params.photo
+//   return db.any(
+//     `
+//     select * from favorites where user_id = $1
+//     `, [photo]
+//   )
+//   .then(
+//     (results)=>{
+//       console.log(`.get:/photo 
+//       ${results}`)
+//       res.json(results)
+//     }
+//   )
+// })
 
 
 
