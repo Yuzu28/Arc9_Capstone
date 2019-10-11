@@ -79,10 +79,13 @@ import {Link} from 'react-router-dom';
         const userId = JSON.parse(localStorage.getItem('userData')).id
         const body={
                     userId: userId}
+                    
                     console.log(body)
+
         console.log(`we want to remove a fav`)
         console.log(game_id)
         axios.post(`${window.apiHost}/users/favorites/${game_id}`, body)
+        
     }
 
 
