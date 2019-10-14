@@ -11,6 +11,9 @@ import PopularGames from './components/PopularGames';
 import RecentlyReleased from './components/RecentlyReleased'
 
 import favorites from './components/favorites';
+import Posts from './components/Forum/Posts';
+import AddPost from './components/Forum/AddPost';
+import ForumApp from './components/Forum/ForumApp';
 
 // import NavBarRedesign from './components/NavBarRedesign'
 
@@ -40,6 +43,9 @@ function App() {
 
 				<Route path="/search/:searchTerm" component={SearchPage} />
         <Route exact path="/users/favorites" component={favorites} />
+        <Route exact path="/posts" component={ Posts } />
+        <Route exact path="/posts" component = {ForumApp}/>
+        <Route exact path="/add-post" component={ AddPost } />
 
         {/* <Route exact path="/games/favorites" component={favorites} /> */}
 

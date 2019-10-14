@@ -119,6 +119,7 @@ if (this.state.active === false){
 <nav className="navbar navbar-light fixed-top navbar-expand-md" role="navigation">
     <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span className="navbar-toggler-icon"></span></button> 
         <Link to="/" className="navbar-brand" id="titleName" >  <span id="titleColor">Arc-9 </span> <u>Gaming</u></Link>
+        <Link to="/forum/post">Forum</Link>
         <div id="navbar" className="collapse navbar-collapse">
 
             {/* *********************************search bar stuff */}
