@@ -60,7 +60,7 @@ class PopularGames extends Component{
     render(){
         const settings = {
             dots: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 5,
@@ -87,7 +87,7 @@ class PopularGames extends Component{
         })
     return(
         // <div> {gameList}</div>
-        <div>
+        <div className="populargamess">
         <h2> Popular Games Right Now </h2>
         <Slider {...settings}>
              {gamePopularList}

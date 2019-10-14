@@ -87,13 +87,13 @@ class Games extends Component{
         })
     return(
         // <div> {gameList}</div>
-        <div>
+        <div className="populargamess">
         <h2> Coming Soon </h2>
         <Slider {...settings}>
              {gameList}
             
         </Slider>
-        <hr className="horizontalLine"></hr>
+        <hr className="horizontalLineww"></hr>
         <div className="footer">
   <p>Copyright © Arc-9 Gameing 2019</p>
 </div>

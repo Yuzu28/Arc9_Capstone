@@ -88,7 +88,7 @@ class RecentlyReleased extends Component{
         })
     return(
         // <div> {gameList}</div>
-        <div>
+        <div className="populargamess">
         <h2> Recently Released  </h2>
         <Slider {...settings}>
              {recentlyCameOut}

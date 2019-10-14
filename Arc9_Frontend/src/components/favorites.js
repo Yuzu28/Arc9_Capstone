@@ -26,12 +26,12 @@ import {Link} from 'react-router-dom';
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         const url = `${window.apiHost}/users/favorites`;
         const axiosResponse = await axios.get(url + `/${JSON.parse(localStorage.getItem('userData')).id}`)
-        console.log(axiosResponse.data)
+        // console.log(axiosResponse.data)
 
         // const gameCoverUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/"
 
         let favoritesGameIds = axiosResponse.data.map(x => x.game_id);
-        console.log(favoritesGameIds);
+        // console.log(favoritesGameIds);
         this.setState({
             FavGame: favoritesGameIds
         })
@@ -51,12 +51,12 @@ import {Link} from 'react-router-dom';
         data: `fields cover.height,cover.image_id,cover.url,cover.width,dlcs,name,release_dates,release_dates.date,release_dates.human; where id = (${favId}); `
     })
         .then(response => {
-            const gameData = response.data;
+            // const gameData = response.data;
             // console.log(gameData);
-            console.log(response.data);
-            console.log(response.data[0].cover.url);
-            console.log(response.data[0].name);
-            console.log(response.data[0].id);
+            // console.log(response.data);
+            // console.log(response.data[0].cover.url);
+            // console.log(response.data[0].name);
+            // console.log(response.data[0].id);
 
 
             this.setState({ 
@@ -81,8 +81,8 @@ import {Link} from 'react-router-dom';
 
                     console.log(body)
 
-        console.log(`we want to remove a fav`)
-        console.log(game_id)
+        // console.log(`we want to remove a fav`)
+        // console.log(game_id)
         axios.post(`${window.apiHost}/users/favorites/${game_id}`, body)
 
         window.location.reload()
@@ -96,8 +96,8 @@ import {Link} from 'react-router-dom';
 
         const favorites = this.state.FavGame.map((id,index)=>{
             var gameinfo = this.state[id] ||{};
-            console.log(gameinfo);
-            console.log(gameinfo.release_dates)
+            // console.log(gameinfo);
+            // console.log(gameinfo.release_dates)
             return(
                 // <div>
                 // <h1>{gameinfo.name}</h1>
@@ -136,7 +136,7 @@ import {Link} from 'react-router-dom';
                   </div>
 
             </div>
-            <hr className="horizontalLine"></hr>
+            <hr className="horizontalLineww"></hr>
 
             </div>
 
