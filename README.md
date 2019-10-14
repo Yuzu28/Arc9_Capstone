@@ -2,6 +2,8 @@
 
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/arc9main.png"  width="100%" height="100%">
 
+<span style="color:blue">some *This is Blue italic.* text</span>
+
 
 ## Description
 * A Info Gaming website where users can search for their favorite games and get to know more information about the game such as the game summary, videos, screenshots, etc. Users also have an opportunity to create an account and bookmark/favorite their favorite game in which can later be removed from their account. 
