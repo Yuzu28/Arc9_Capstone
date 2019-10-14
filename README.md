@@ -67,13 +67,48 @@ Game Videos Carousel          |  Game Screenshots Carousel
 | ------------- |
 | HTML  | 
 | CSS| 
+| Bootstrap|
 | Javascript  | 
 | React | 
 | Express | 
+| Postico  | 
 
 | API Used | 
 | ------------- |
 | IGDB API: https://www.igdb.com/api| 
+
+
+
+   
+  
+## Obstacles and Challenges 
+
+* Login and Registration box
+   * Trying to make sure it stores data of username,password, email in Postico.
+   * Users can login successfully with their username and password. 
+
+
+  
+* API
+   * When the API is first called is gives nothing but IDs in which have to be converted into readable data that can be pulled
+   * Some of the API data have null values such as images, videos, summary, screenshots, etc. As a result, we use a default image and default text to incorporate for those null values. 
+
+    
+* Search Bar
+    * When using React, a problem faced is when a user tries to search for something the first time it goes through, but when searching for a second time it does not go through. A problem that resulted was ComponentDidMount will run one time. The problem was fixed so user can search nonstop without encountering any problems.  
+
+* Single Game Page
+   * Trying to make sure the videos and screenshot carousel are looping properly from the API data using .map to incorporate it into the carousel using React Slick. 
+   
+* Favorites
+   *Problem faced were games would be added to the favorites list. But when trying to remove the game, the page will have to be refreshed to see game disappear from the favorites page. The problems was solved using window.location.reload()
+
+   
+
+           
+
+
+   
 
 
 
