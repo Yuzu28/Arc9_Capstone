@@ -8,14 +8,14 @@
 
 ## How does it Works?
 
-###### Homepage
+#### Homepage
 *  When the users first head to the site, the homepage will explain what does the site do. As users scroll, it will show a carousel of games that are currently popular, recently released, and games that are coming soon. 
 
 <p align="center">
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/mainpage.gif"  width="80%" height="80%">
 </p>
 
-###### Searching
+#### Searching
 * In the search bar, users can search for their favorite games. As for the example below, let say you want to search for a game called "God Eater".
 
 <p align="center">
@@ -27,6 +27,24 @@
 <p align="center">
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/noresults.gif"  width="80%" height="80%">
 </p>
+
+#### Single Game Page
+
+* After Searching for a particular game. The users may want to know more about the game in which they can click on the game image to know more about the game. 
+* On the single game page, it give info on a particlar game in which may include the game summary, genres, themes, platforms, videos, screenshots, etc. An example of the single game page is show below, in this case we want to know more about the game "God Eater 3"
+
+<p align="center">
+<img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/gamesinglepage.gif"  width="80%" height="80%">
+</p>
+
+* Some special feature that is incorported on the Single Game Page are Carousel  of the game videos and screentshots. 
+
+
+Game Videos Carousel          |  Game Screenshots Carousel 
+:-------------------------:|:-------------------------:
+![](https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/videoscarousel.gif)  |  ![](https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/phtocarousel.gif)
+
+
 
 
 
