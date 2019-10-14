@@ -16,6 +16,10 @@
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/mainpage.gif"  width="80%" height="80%">
 </p>
 
+#### Login and Registration 
+
+*  If the user wishes to save their favorite game, they can register in which required their username, password, and email address. Then as a result the user can now login into the site by using their username and password during registration.  
+
 #### Searching
 * In the search bar, users can search for their favorite games. As for the example below, let say you want to search for a game called "God Eater".
 
@@ -31,8 +35,9 @@
 
 #### Single Game Page
 
-* After Searching for a particular game. The users may want to know more about the game in which they can click on the game image to know more about the game. 
-* On the single game page, it give info on a particlar game in which may include the game summary, genres, themes, platforms, videos, screenshots, etc. An example of the single game page is show below, in this case we want to know more about the game "God Eater 3"
+ * After Searching for a particular game. The users may want to know more about the game in which they can click on the game image to know more about the game. 
+* On the single game page, it gives info on a particular game in which may include the game summary, genres, themes, platforms, videos, screenshots, etc. An example of the single game page is shown below, in this case we want to know more about the game "God Eater 3"
+
 
 <p align="center">
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/gamesinglepage.gif"  width="80%" height="80%">
@@ -45,6 +50,30 @@ Game Videos Carousel          |  Game Screenshots Carousel
 :-------------------------:|:-------------------------:
 ![](https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/videoscarousel.gif)  |  ![](https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/phtocarousel.gif)
 
+#### Favorites 
+ * When a user sees a game that he/she like they can add it to their favorites on their account as shown below. 
+ <p align="center">
+<img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/addtofav.gif"  width="80%" height="80%">
+</p>
+
+ * The user can remove games from their favorite list if they lose interest in the game or added it by mistake as shown below. 
+ <p align="center">
+<img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/removefav.gif"  width="80%" height="80%">
+</p>
+
+## Technology Used
+
+| Languages | 
+| ------------- |
+| HTML  | 
+| CSS| 
+| Javascript  | 
+| React | 
+| Express | 
+
+| API Used | 
+| ------------- |
+| IGDB API: https://www.igdb.com/api| 
 
 
 
