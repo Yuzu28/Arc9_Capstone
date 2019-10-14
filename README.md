@@ -101,7 +101,7 @@ Game Videos Carousel          |  Game Screenshots Carousel
    * Trying to make sure the videos and screenshot carousel are looping properly from the API data using .map to incorporate it into the carousel using React Slick. 
    
 * Favorites
-   *Problem faced were games would be added to the favorites list. But when trying to remove the game, the page will have to be refreshed to see game disappear from the favorites page. The problems was solved using window.location.reload()
+   * Problem faced were games would be added to the favorites list. But when trying to remove the game, the page will have to be refreshed to see game disappear from the favorites page. The problems was solved using window.location.reload()
 
    
 
