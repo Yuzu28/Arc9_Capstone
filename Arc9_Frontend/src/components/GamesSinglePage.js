@@ -41,7 +41,7 @@ class GamesSinglePage extends Component {
 
         //id the game 
         const gameIdIdentity = this.props.match.params.gamesId;
-        console.log(gameIdIdentity);
+        // console.log(gameIdIdentity);
         
        
         axios({
@@ -59,8 +59,8 @@ class GamesSinglePage extends Component {
         .then(response => {
             const gameData = response.data;
             // console.log(gameData);
-            console.log(response.data);
-            console.log(response.data[0].url);
+            // console.log(response.data);
+            // console.log(response.data[0].url);
             this.setState({ 
                 SingleGame: gameData
 
@@ -92,8 +92,8 @@ class GamesSinglePage extends Component {
 
         let videos = null;
         if (result[0]){
-            console.log("result")
-            console.log(result)
+            // console.log("result")
+            // console.log(result)
             videos = result[0].map( (x,i)=> {
                 return(
                     <div key={i} className ="embed-responsive embed-responsive-16by9">
@@ -160,7 +160,7 @@ class GamesSinglePage extends Component {
                                     </span>
 
         }
-        console.log(platforms);
+        // console.log(platforms);
 
        
 
@@ -258,7 +258,7 @@ class GamesSinglePage extends Component {
 
         }
 
-        console.log(company);
+        // console.log(company);
 
 
 

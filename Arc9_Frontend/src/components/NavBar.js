@@ -23,7 +23,7 @@ import axios from 'axios'
     componentDidMount(){
         const ls =localStorage.getItem('userData')
         const userData = JSON.parse(ls)
-        console.log("this is user data ", userData)
+        // console.log("this is user data ", userData)
         if (userData !== null){
             this.setState({active: true, username: userData.username})
             // this.username= userData.username;
