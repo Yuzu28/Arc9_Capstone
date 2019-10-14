@@ -2,7 +2,6 @@
 
 <img src="https://github.com/Yuzu28/Arc9_Capstone/blob/master/Arc9_Frontend/public/arc9main.png"  width="100%" height="100%">
 
-<span style="color:blue">some *This is Blue italic.* text</span>
 
 
 ## Description
