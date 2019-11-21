@@ -104,7 +104,7 @@ Game Videos Carousel          |  Game Screenshots Carousel
    * Problem faced were games would be added to the favorites list. But when trying to remove the game, the page will have to be refreshed to see game disappear from the favorites page. The problems was solved using window.location.reload()
    
 * Deployment 
-   * Arrow on carousel are hidden when deployed. The solution was added dots at the bottom for users to scroll. 
+   * Arrow on carousel are hidden when deployed. The solution was added dots at the bottom for users to scroll.. 
 
    
 
