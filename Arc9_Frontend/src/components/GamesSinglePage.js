@@ -30,53 +30,58 @@ class GamesSinglePage extends Component {
     
     }
 
+            //id the game 
+
 
     componentDidMount(){
-
-        var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-        const API_KEY = `${config.api_key}`;
-        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-
-
-        //id the game 
         const gameIdIdentity = this.props.match.params.gamesId;
-        // console.log(gameIdIdentity);
-        
-       
+        console.log(gameIdIdentity);
+
+
+        var client_id= `${config.client_id}`
+        const secrect_Key = `${config.secretKey}`;
+
         axios({
-
-        
-
-        url: proxyUrl + `https://api-v3.igdb.com/games/`,
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'user-key': API_KEY
-        },
-        data: `fields involved_companies.company.name,age_ratings.rating,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks.url,bundles,category,collection,cover.height,cover.image_id,cover.url,cover.width,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise.name,franchises.name,game_engines,game_modes.name,genres.name,hypes,involved_companies,keywords.name,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,popularity,pulse_count,rating,rating_count,release_dates.date,release_dates.human,screenshots.image_id,screenshots.height,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url; where id = (${gameIdIdentity}); `
-    })
-        .then(response => {
-            const gameData = response.data;
-            // console.log(gameData);
-            // console.log(response.data);
-            // console.log(response.data[0].url);
-            this.setState({ 
-                SingleGame: gameData
-
+            url: `https://id.twitch.tv/oauth2/token?client_id=${client_id}&client_secret=${secrect_Key}&grant_type=client_credentials`,
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+          })
+          .then(response => {
+            //   console.log(response.data);
+            return axios({
+                url: "http://localhost:8080/https://api.igdb.com/v4/games",
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Client-ID": client_id,
+                  Authorization: `Bearer ${response.data.access_token}`,
+                },
+                data: `fields id,age_ratings,aggregated_rating,aggregated_rating_count,alternative_names.name,artworks,bundles,category,checksum,collection,cover.image_id,created_at,dlcs,expanded_games,expansions,external_games,first_release_date,follows,forks,franchise.name,franchises.name,game_engines,game_localizations,game_modes.name,genres.name,hypes,involved_companies.company.name,keywords,language_supports,multiplayer_modes,name,parent_game,platforms.name,player_perspectives.name,ports,rating,rating_count,release_dates.human,remakes,remasters,screenshots.image_id,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes.name,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.video_id,websites.url;where id = (${gameIdIdentity});`,
             })
-        })
-        .catch(err => {
-            console.error(err);
-        });
+                .then((results) => {
+                    const gameData = results.data;
 
-        // data: "fields name,summary,url,cover,popularity,cover.url;sort popularity desc;limit 13;"
-
+                    // console.log(results.data);
+                //   return response.data;
+                this.setState({
+                    SingleGame:  gameData
+                })
+                })
+          })
+          .catch(err =>{
+              console.error(err);
+          })
     }
-
+  
 
 
     render(){
+        console.log("hello");
+        console.log(this.state.SingleGame);
+        // console.log(this.state.SingleGame.collection);
+
 
          // ****************************
         // Getting data from the API
@@ -114,6 +119,7 @@ class GamesSinglePage extends Component {
         //Get the Game ScreenShots
 
         let result2 = allGames.map(game => game.screenshots);
+        console.log(result2);
 
         let gamePhotos = null;
         if (result2[0]){
@@ -268,30 +274,6 @@ class GamesSinglePage extends Component {
         // Getting data from the API End
         // ****************************
 
-
-
-
-
-
-
-
-    //     var holder = []
-
-    
-    //     var ittt = result.forEach((item) => {
-
-    //         // read all keys of item.
-    //        Object.keys(item).forEach((key) => {
-    //             holder.push(item[key]);
-    //        });
-       
-    //    });
-    //     console.log(result);
-    //     console.log(holder);
-
-    //     var y =holder.join(', ')
-    //     console.log(y)
-
         //game image url
 
 
@@ -309,9 +291,6 @@ class GamesSinglePage extends Component {
 
         const gameList = this.state.SingleGame.map((game,index)=>{
             // console.log(game.url);
-
-                // game.videos.forEach(function(obj) { console.log(video_id); });
-
             return( 
             <div className="container" key={index} >
                 <div className="row">
