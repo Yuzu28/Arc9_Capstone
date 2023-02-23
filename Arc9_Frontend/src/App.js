@@ -26,7 +26,6 @@ function App() {
 
 
 
-        {/* <Route exact path="/" component={Home}/> */}
         <Route exact path="/" component={Slider}/>
         <Route exact path="/" component={Home}/>
         
@@ -41,9 +40,9 @@ function App() {
 				<Route path="/search/:searchTerm" component={SearchPage} />
         <Route exact path="/users/favorites" component={favorites} />
 
-        {/* <Route exact path="/games/favorites" component={favorites} /> */}
+        <Route exact path="/games/favorites" component={favorites} />
 
-        {/* <Route path="/results/" component={SearchPage} /> */}
+        <Route path="/results/" component={SearchPage} />
 
 
 
